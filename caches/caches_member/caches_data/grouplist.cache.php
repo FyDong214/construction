@@ -9,7 +9,7 @@ return array (
     'point' => '0',
     'allowmessage' => '0',
     'allowvisit' => '0',
-    'allowpost' => '0',
+    'allowpost' => '1',
     'allowpostverify' => '0',
     'allowsearch' => '1',
     'allowupgrade' => '0',

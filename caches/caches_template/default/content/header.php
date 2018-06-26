@@ -8,6 +8,7 @@
 <meta name="description" content="<?php echo $SEO['description'];?>">
 <link href="<?php echo CSS_PATH;?>reset.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo CSS_PATH;?>default_blue.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo CSS_PATH;?>iconfont.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="<?php echo JS_PATH;?>jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo JS_PATH;?>jquery.sgallery.js"></script>
 <script type="text/javascript" src="<?php echo JS_PATH;?>search_common.js"></script>
@@ -20,7 +21,13 @@
 			<li>加为收藏</li>
 			<li>手机版</li>
 			<li>桌面下载</li>
-			<li>邮箱登录</li>
+			<li class="login" >
+				<div class="login lh24 blue">
+					<span class="rt">
+						<script type="text/javascript">document.write('<iframe src="<?php echo APP_PATH;?>index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=<?php echo get_siteid();?>" allowTransparency="true"  width="500" height="40" frameborder="0" scrolling="no"></iframe>')</script>
+					</span>
+				</div>
+			</li>
 			<li>论坛登录</li>
 			<li>站点导航</li>
 		</ul>
@@ -39,55 +46,45 @@ $(function(){
 	startmarquee('announ',22,1,500,3000);
 })
 </script> -->
-            <!-- <div class="login lh24 blue"><a href="<?php echo APP_PATH;?>index.php?m=content&c=rss&siteid=<?php echo get_siteid();?>" class="rss ib">rss</a><span class="rt"><script type="text/javascript">document.write('<iframe src="<?php echo APP_PATH;?>index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=<?php echo get_siteid();?>" allowTransparency="true"  width="500" height="24" frameborder="0" scrolling="no"></iframe>')</script></span></div> -->
+			<!-- <div class="login lh24 blue"><a href="<?php echo APP_PATH;?>index.php?m=content&c=rss&siteid=<?php echo get_siteid();?>" class="rss ib">rss</a><span class="rt"><script type="text/javascript">document.write('<iframe src="<?php echo APP_PATH;?>index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=<?php echo get_siteid();?>" allowTransparency="true"  width="500" height="24" frameborder="0" scrolling="no"></iframe>')</script></span></div> -->
+           
+			
 		<div class="nav-right">
-			<div style="color: #fff;line-height: 40px;margin: 0 20px;">
-				<?php echo date('Y',time($updatetime));?>年<?php echo date('m',time($updatetime));?>月<?php echo date('d',time($updatetime));?>日 &nbsp
+			<div style="color: #fff;line-height: 42px;margin: 0 20px;">
+				<?php echo date('Y',time($updatetime));?>年<?php echo date('m',time($updatetime));?>月<?php echo date('d',time($updatetime));?>日
 				星期<span id="dateCN"><?php echo date('N',time($updatetime));?></span>
 			</div>
-			<div class="bd" style="margin-top: 8px;">
+			<div style="color: #fff;line-height: 42px;margin: 0 0px;">北京 37℃</div>
+			<div class="tab" id="search">
+					<?php $j=0?>
+					<?php $search_model = getcache('search_model_'.$siteid, 'search');?>
+					<?php $n=1;if(is_array($search_model)) foreach($search_model AS $k=>$v) { ?>
+					<?php $j++;?>
+						<!-- <a href="javascript:;" onclick="setmodel(<?php echo $v['typeid'];?>, $(this));" style="outline:medium none;" hidefocus="true" <?php if($j==1 && $typeid=$v['typeid']) { ?> class="on" <?php } ?>><?php echo $v['name'];?></a><?php if($j != count($search_model)) { ?><span> | </span><?php } ?> -->
+					<?php $n++;}unset($n); ?>
+					<?php unset($j);?>
+				</div>
+			<div class="bd search">
 				<form action="<?php echo APP_PATH;?>index.php" method="get" target="_blank">
 					<input type="hidden" name="m" value="search"/>
 					<input type="hidden" name="c" value="index"/>
 					<input type="hidden" name="a" value="init"/>
 					<input type="hidden" name="typeid" value="<?php echo $typeid;?>" id="typeid"/>
 					<input type="hidden" name="siteid" value="<?php echo $siteid;?>" id="siteid"/>
-					<input type="text" class="text" name="q" id="q"/><input type="submit" value="搜 索" class="button" />
+					<input type="text" class="text search" name="q" id="q"/>
+					<i class="iconfont icon-sousuo search"></i>
+					<input type="submit" value="" class="button mybutton" />
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="header">
-	<!-- <div class="logo"><a href="<?php echo siteurl($siteid);?>/"><img src="<?php echo IMG_PATH;?>v9/logo.jpg" /></a></div> -->
-
-    <!-- <div class="search">
-    	<div class="tab" id="search">
-			<?php $j=0?>
-			<?php $search_model = getcache('search_model_'.$siteid, 'search');?>
-			<?php $n=1;if(is_array($search_model)) foreach($search_model AS $k=>$v) { ?>
-			<?php $j++;?>
-				<a href="javascript:;" onclick="setmodel(<?php echo $v['typeid'];?>, $(this));" style="outline:medium none;" hidefocus="true" <?php if($j==1 && $typeid=$v['typeid']) { ?> class="on" <?php } ?>><?php echo $v['name'];?></a><?php if($j != count($search_model)) { ?><span> | </span><?php } ?>
-			<?php $n++;}unset($n); ?>
-			<?php unset($j);?>
-		</div>
-
-        <div class="bd">
-            <form action="<?php echo APP_PATH;?>index.php" method="get" target="_blank">
-				<input type="hidden" name="m" value="search"/>
-				<input type="hidden" name="c" value="index"/>
-				<input type="hidden" name="a" value="init"/>
-				<input type="hidden" name="typeid" value="<?php echo $typeid;?>" id="typeid"/>
-				<input type="hidden" name="siteid" value="<?php echo $siteid;?>" id="siteid"/>
-                <input type="text" class="text" name="q" id="q"/><input type="submit" value="搜 索" class="button" />
-            </form>
-        </div>
-	</div> -->
 	<ul class="header-logo">
 		<li class="head_1"></li>
 		<li class="head_2"></li>
 		<li class="head_3"></li>
-		<li class="member-search">人员查询</li>
+		<li class="member-search">游客投稿</li>
 	</ul>
 
     <div class="banner"><script language="javascript" src="<?php echo APP_PATH;?>index.php?m=poster&c=index&a=show_poster&id=1"></script></div>

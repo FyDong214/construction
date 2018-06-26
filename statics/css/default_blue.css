@@ -105,6 +105,11 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .bx-prev{background: url(../images/con/arrow_right.png) no-repeat; width:20px; height:36px; text-indent: -999999px;z-index: 999;  position: absolute; float:left; right:5px; top:50px;} 
 .bx-next{background: url(../images/con/arrow_left.png) no-repeat;  width:20px; height:36px; text-indent: -999999px;z-index: 999;  position: absolute; top:50px;left:5px;}
 
+.bd.search{margin-top: 8px;position: relative;}
+.bd.search .iconfont.search{position: absolute;right: 4px;top: 2px;}
+.bd.search .text.search{background: transparent;border: 1px solid white;height: 20px;line-height: 20px;width: 140px;padding: 0 4px;color: #fff;margin-left: 26px;margin-top: 3px;}
+.bd.search .button.mybutton{position: absolute;top: 1px;right: 0px;background: transparent;border: none;width: 25px;}
+
 /* 通用容器 */
 .box{zoom:1; overflow:auto; padding-bottom:10px}
 .box h6{background: url(../images/v9/title.png) no-repeat right top;color:#1e50a2; height:26px; margin-bottom:10px; line-height:26px; padding-left:10px;border-bottom:1px solid #dce7f3; position:relative}

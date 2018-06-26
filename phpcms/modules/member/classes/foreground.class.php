@@ -8,7 +8,10 @@ class foreground {
 		self::check_ip();
 		$this->db = pc_base::load_model('member_model');
 		//ajax验证信息不需要登录
-		if(substr(ROUTE_A, 0, 7) != 'public_') {
+		// if(substr(ROUTE_A, 0, 7) != 'public_') {
+		// 	self::check_member();
+		// }
+		if(substr(ROUTE_A, 0, 7) != 'public_' && (ROUTE_A!= 'publish'|| ROUTE_A!= 'info_publish')) {
 			self::check_member();
 		}
 	}

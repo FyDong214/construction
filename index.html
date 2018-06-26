@@ -8,6 +8,7 @@
 <meta name="description" content="PHPCMS演示站">
 <link href="http://localhost/construction/statics/css/reset.css" rel="stylesheet" type="text/css" />
 <link href="http://localhost/construction/statics/css/default_blue.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost/construction/statics/css/iconfont.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="http://localhost/construction/statics/js/jquery.min.js"></script>
 <script type="text/javascript" src="http://localhost/construction/statics/js/jquery.sgallery.js"></script>
 <script type="text/javascript" src="http://localhost/construction/statics/js/search_common.js"></script>
@@ -20,7 +21,13 @@
 			<li>加为收藏</li>
 			<li>手机版</li>
 			<li>桌面下载</li>
-			<li>邮箱登录</li>
+			<li class="login" >
+				<div class="login lh24 blue">
+					<span class="rt">
+						<script type="text/javascript">document.write('<iframe src="http://localhost/construction/index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=1" allowTransparency="true"  width="500" height="40" frameborder="0" scrolling="no"></iframe>')</script>
+					</span>
+				</div>
+			</li>
 			<li>论坛登录</li>
 			<li>站点导航</li>
 		</ul>
@@ -33,48 +40,42 @@ $(function(){
 	startmarquee('announ',22,1,500,3000);
 })
 </script> -->
-            <!-- <div class="login lh24 blue"><a href="http://localhost/construction/index.php?m=content&c=rss&siteid=1" class="rss ib">rss</a><span class="rt"><script type="text/javascript">document.write('<iframe src="http://localhost/construction/index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=1" allowTransparency="true"  width="500" height="24" frameborder="0" scrolling="no"></iframe>')</script></span></div> -->
+			<!-- <div class="login lh24 blue"><a href="http://localhost/construction/index.php?m=content&c=rss&siteid=1" class="rss ib">rss</a><span class="rt"><script type="text/javascript">document.write('<iframe src="http://localhost/construction/index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=1" allowTransparency="true"  width="500" height="24" frameborder="0" scrolling="no"></iframe>')</script></span></div> -->
+           
+			
 		<div class="nav-right">
-			<div style="color: #fff;line-height: 40px;margin: 0 20px;">
-				2018年06月25日 &nbsp
-				星期<span id="dateCN">1</span>
+			<div style="color: #fff;line-height: 42px;margin: 0 20px;">
+				2018年06月26日
+				星期<span id="dateCN">2</span>
 			</div>
-			<div class="bd" style="margin-top: 8px;">
+			<div style="color: #fff;line-height: 42px;margin: 0 0px;">北京 37℃</div>
+			<div class="tab" id="search">
+																										<!-- <a href="javascript:;" onclick="setmodel(1, $(this));" style="outline:medium none;" hidefocus="true"  class="on" >新闻</a><span> | </span> -->
+																<!-- <a href="javascript:;" onclick="setmodel(3, $(this));" style="outline:medium none;" hidefocus="true" >图片</a><span> | </span> -->
+																<!-- <a href="javascript:;" onclick="setmodel(2, $(this));" style="outline:medium none;" hidefocus="true" >下载</a><span> | </span> -->
+																<!-- <a href="javascript:;" onclick="setmodel(52, $(this));" style="outline:medium none;" hidefocus="true" >专题</a> -->
+														</div>
+			<div class="bd search">
 				<form action="http://localhost/construction/index.php" method="get" target="_blank">
 					<input type="hidden" name="m" value="search"/>
 					<input type="hidden" name="c" value="index"/>
 					<input type="hidden" name="a" value="init"/>
-					<input type="hidden" name="typeid" value="" id="typeid"/>
+					<input type="hidden" name="typeid" value="1" id="typeid"/>
 					<input type="hidden" name="siteid" value="1" id="siteid"/>
-					<input type="text" class="text" name="q" id="q"/><input type="submit" value="搜 索" class="button" />
+					<input type="text" class="text search" name="q" id="q"/>
+					<i class="iconfont icon-sousuo search"></i>
+					<input type="submit" value="" class="button mybutton" />
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="header">
-	<!-- <div class="logo"><a href="http://localhost/construction/"><img src="http://localhost/construction/statics/images/v9/logo.jpg" /></a></div> -->
-
-    <!-- <div class="search">
-    	<div class="tab" id="search">
-																<a href="javascript:;" onclick="setmodel(1, $(this));" style="outline:medium none;" hidefocus="true"  class="on" >新闻</a><span> | </span>										<a href="javascript:;" onclick="setmodel(3, $(this));" style="outline:medium none;" hidefocus="true" >图片</a><span> | </span>										<a href="javascript:;" onclick="setmodel(2, $(this));" style="outline:medium none;" hidefocus="true" >下载</a><span> | </span>										<a href="javascript:;" onclick="setmodel(52, $(this));" style="outline:medium none;" hidefocus="true" >专题</a>								</div>
-
-        <div class="bd">
-            <form action="http://localhost/construction/index.php" method="get" target="_blank">
-				<input type="hidden" name="m" value="search"/>
-				<input type="hidden" name="c" value="index"/>
-				<input type="hidden" name="a" value="init"/>
-				<input type="hidden" name="typeid" value="1" id="typeid"/>
-				<input type="hidden" name="siteid" value="1" id="siteid"/>
-                <input type="text" class="text" name="q" id="q"/><input type="submit" value="搜 索" class="button" />
-            </form>
-        </div>
-	</div> -->
 	<ul class="header-logo">
 		<li class="head_1"></li>
 		<li class="head_2"></li>
 		<li class="head_3"></li>
-		<li class="member-search">人员查询</li>
+		<li class="member-search">游客投稿</li>
 	</ul>
 
     <div class="banner"><script language="javascript" src="http://localhost/construction/index.php?m=poster&c=index&a=show_poster&id=1"></script></div>
@@ -120,20 +121,20 @@ $(function(){
 </script><!--main-->
 <div class="main">
     <div class="top-news">
-                        <h4 class="blue_t"><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=18&id=23" title="习近平到山东代表团参加审议">习近平到山东代表团参加审</a></h4>
+                        <h4 class="blue_tl"><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=18&id=23" title="习近平到山东代表团参加审议">习近平到山东代表团参加审</a></h4>
         <!-- <p><img src="http://localhost/construction/statics/images/nopic.gif" width="90" height="60"/>顶部热点5顶部热点5顶部热点5顶部热点5</p> -->
         <!-- <div class="bk20 hr"><hr /></div> -->
-                <h4 class="blue_l"><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=18&id=22" title="收支之间，彰显新时代政府理财之道">收支之间，彰显新时代政府</a></h4>
+                <h4 class="blue_lt"><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=18&id=22" title="收支之间，彰显新时代政府理财之道">收支之间，彰显新时代政府</a></h4>
         <!-- <p>顶部热点4顶部热点4顶部热点4顶部热点4</p> -->
         <!-- <div class="bk20 hr"><hr /></div> -->
-                <h4 class="blue_l"><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=18&id=21" title="增减并举，为高质量发展保驾护航">增减并举，为高质量发展保</a></h4>
+                <h4 class="blue_ll"><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=18&id=21" title="增减并举，为高质量发展保驾护航">增减并举，为高质量发展保</a></h4>
         <!-- <p>顶部热点3顶部热点3顶部热点3顶部热点3</p> -->
         <!-- <div class="bk20 hr"><hr /></div> -->
-                <h4 class="blue_l"><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=18&id=20" title="取用有度，满足百姓更美好生活需要">取用有度，满足百姓更美好</a></h4>
+                <h4 class="blue_ll"><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=18&id=20" title="取用有度，满足百姓更美好生活需要">取用有度，满足百姓更美好</a></h4>
         <!-- <p>顶部热点2顶部热点2顶部热点2</p> -->
         <!-- <div class="bk20 hr"><hr /></div> -->
           
-        <a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=18" class="more">更多>></a>
+        <a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=18" class="more">更多头条>></a>
            
 
     </div>
@@ -361,6 +362,7 @@ $(function(){
             <ul class="content digg">
 												<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=1" target="_blank" title="头条新闻111">头条新闻111</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=2" target="_blank" title="头条新闻222">头条新闻222</a></li>
+									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=43" target="_blank" title="世界杯第12日看点：小组赛末轮开战 伊朗恶斗葡萄牙">世界杯第12日看点：小组赛末轮开战 伊朗恶斗葡萄牙</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=33" target="_blank" title="美国国防部长马蒂斯将于6月26日至28日访问中国">美国国防部长马蒂斯将于6月26日至28日访问中国</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=34" target="_blank" title="央行年内第三次降准：有何不同？传递哪些政策信号">央行年内第三次降准：有何不同？传递哪些政策信号</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=35" target="_blank" title="中国海警船今巡航钓鱼岛领海 日本外务省抗议">中国海警船今巡航钓鱼岛领海 日本外务省抗议</a></li>
@@ -368,13 +370,13 @@ $(function(){
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=37" target="_blank" title="全国首例！西安暂停企事业单位买住房，有何考虑">全国首例！西安暂停企事业单位买住房，有何考虑</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=38" target="_blank" title="井柏然倪妮疑似分手：换掉情侣头像，活动全程无交流">井柏然倪妮疑似分手：换掉情侣头像，活动全程无交流</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=39" target="_blank" title="《中餐厅2》录完，舒淇感慨“终于不刷杯子了”，林心如回7">《中餐厅2》录完，舒淇感慨“终于不刷杯子了”，林心如回7</a></li>
-									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=40" target="_blank" title="张杰晒妈妈年轻美照 粉丝：像琼瑶剧女主">张杰晒妈妈年轻美照 粉丝：像琼瑶剧女主</a></li>
 							            </ul>
             <ul class="content digg hidden">
 										            </ul>
             <ul class="content digg hidden">
 												<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=1" target="_blank">头条新闻111</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=2" target="_blank">头条新闻222</a></li>
+									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=43" target="_blank">世界杯第12日看点：小组赛末轮开战 伊朗恶斗葡萄牙</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=33" target="_blank">美国国防部长马蒂斯将于6月26日至28日访问中国</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=34" target="_blank">央行年内第三次降准：有何不同？传递哪些政策信号</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=35" target="_blank">中国海警船今巡航钓鱼岛领海 日本外务省抗议</a></li>
@@ -382,7 +384,6 @@ $(function(){
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=37" target="_blank">全国首例！西安暂停企事业单位买住房，有何考虑</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=38" target="_blank">井柏然倪妮疑似分手：换掉情侣头像，活动全程无交流</a></li>
 									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=39" target="_blank">《中餐厅2》录完，舒淇感慨“终于不刷杯子了”，林心如回7</a></li>
-									<li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=6&id=40" target="_blank">张杰晒妈妈年轻美照 粉丝：像琼瑶剧女主</a></li>
 							            </ul>
             </div>
         </div><div class="bk10"></div>

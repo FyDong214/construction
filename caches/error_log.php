@@ -213,3 +213,31 @@
 <?php exit;?>06-25 17:09:43 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
 <?php exit;?>06-25 17:09:54 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
 <?php exit;?>06-25 17:10:11 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 15:58:17 | 2 | file_get_contents(http://sms.phpip.com/api.php?op=sms_get_productlist&amp;sms_uid=&amp;sms_pid=&amp;sms_passwd=): failed to open stream: Operation timed out | phpcms/modules/sms/classes/smsapi.class.php | 167
+<?php exit;?>06-26 15:58:17 | 2 | file_get_contents(http://sms.phpip.com/api.php?op=sms_get_info&amp;sms_uid=&amp;sms_pid=&amp;sms_passwd=): failed to open stream: Operation timed out | phpcms/modules/sms/classes/smsapi.class.php | 167
+<?php exit;?>06-26 15:58:17 | 2 | file_get_contents(http://sms.phpip.com/api.php?op=smsnotice&amp;url=localhost&amp;type=): failed to open stream: Operation timed out | phpcms/libs/functions/global.func.php | 1741
+<?php exit;?>06-26 15:58:17 | 2 | file_get_contents(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/functions/global.func.php | 1741
+<?php exit;?>06-26 15:58:17 | 2 | file_get_contents(http://sms.phpcms.cn/api.php?op=smsnotice&amp;url=localhost&amp;type=): failed to open stream: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/functions/global.func.php | 1741
+<?php exit;?>06-26 16:08:46 | 8192 | Methods with the same name as their class will not be constructors in a future version of PHP; RSSBase has a deprecated constructor | phpcms/modules/content/classes/rssbuilder.class.php | 23
+<?php exit;?>06-26 16:08:46 | 8192 | Methods with the same name as their class will not be constructors in a future version of PHP; RSSBuilder has a deprecated constructor | phpcms/modules/content/classes/rssbuilder.class.php | 59
+<?php exit;?>06-26 16:08:46 | 8192 | Methods with the same name as their class will not be constructors in a future version of PHP; RSSItem has a deprecated constructor | phpcms/modules/content/classes/rssbuilder.class.php | 1367
+<?php exit;?>06-26 17:07:08 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:07:08 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:07:10 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>06-26 17:09:34 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>06-26 17:10:33 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:10:33 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:29:28 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:29:28 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:29:28 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>06-26 17:29:51 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:29:51 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:29:56 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>06-26 17:30:50 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:30:50 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:30:53 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>06-26 17:30:57 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:30:57 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:37:59 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:37:59 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-26 17:38:00 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
