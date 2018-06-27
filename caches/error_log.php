@@ -440,3 +440,6 @@
 <?php exit;?>06-27 10:39:28 | 2 | db_mysqli::error(): Couldn't fetch mysqli | phpcms/libs/classes/db_mysqli.class.php | 390
 <?php exit;?>06-27 10:50:42 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
 <?php exit;?>06-27 10:52:06 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-27 15:44:42 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-27 15:44:42 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-27 15:44:44 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
