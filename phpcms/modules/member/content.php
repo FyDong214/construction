@@ -130,7 +130,7 @@ class content extends foreground {
 			if (!$catid) showmessage(L('category').L('publish_deny'), APP_PATH.'index.php?m=member');
 
 			//判断本栏目是否允许投稿
-			if (!$priv_db->get_one(array('catid'=>$catid, 'roleid'=>$memberinfo['groupid'], 'is_admin'=>0, 'action'=>'add'))) showmessage(L('category').L('publish_deny'), APP_PATH.'index.php?m=member');
+			if ( $_GET['catid']&&!$priv_db->get_one(array('catid'=>$catid, 'roleid'=>$memberinfo['groupid'], 'is_admin'=>0, 'action'=>'add'))) showmessage(L('category').L('publish_deny'), APP_PATH.'index.php?m=member');
 			$category = $CATEGORYS[$catid];
 			if($category['siteid']!=$siteid) showmessage(L('site_no_category'),'?m=member&c=content&a=publish');
 			$setting = string2array($category['setting']);

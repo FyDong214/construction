@@ -7,7 +7,7 @@ return array (
     'steps' => '1',
     'workname' => '一级审核',
     'description' => '审核一次',
-    'setting' => '',
+    'setting' => '{"1":{"0":"admin"},"2":"","3":"","4":"","nocheck_users":{"0":"admin"}}',
     'flag' => '0',
   ),
   2 => 

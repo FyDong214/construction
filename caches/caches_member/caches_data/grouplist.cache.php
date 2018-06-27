@@ -33,7 +33,7 @@ return array (
     'starnum' => '1',
     'point' => '50',
     'allowmessage' => '100',
-    'allowvisit' => '1',
+    'allowvisit' => '0',
     'allowpost' => '1',
     'allowpostverify' => '0',
     'allowsearch' => '0',

@@ -21,15 +21,15 @@
 			<li>加为收藏</li>
 			<li>手机版</li>
 			<li>桌面下载</li>
-			<li class="login" >
+			<li>论坛登录</li>
+			<li>站点导航</li>
+			<li class="login" style="margin-left: 140px;">
 				<div class="login lh24 blue">
 					<span class="rt">
 						<script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="500" height="40" frameborder="0" scrolling="no"></iframe>')</script>
 					</span>
 				</div>
 			</li>
-			<li>论坛登录</li>
-			<li>站点导航</li>
 		</ul>
     <!-- {pc:content  action="position" posid="9" order="id" num="10" cache="3600"}
     		<div id="announ">
@@ -50,7 +50,7 @@ $(function(){
            
 			
 		<div class="nav-right">
-			<div style="color: #fff;line-height: 42px;margin: 0 20px;">
+			<div style="color: #fff;line-height: 42px;margin: 0 15px;">
 				{date('Y',time($updatetime))}年{date('m',time($updatetime))}月{date('d',time($updatetime))}日
 				星期<span id="dateCN">{date('N',time($updatetime))}</span>
 			</div>
@@ -84,7 +84,9 @@ $(function(){
 		<li class="head_1"></li>
 		<li class="head_2"></li>
 		<li class="head_3"></li>
-		<li class="member-search">游客投稿</li>
+		<li class="member-search">
+			<a href="{APP_PATH}index.php?m=member&siteid=1">在线投稿</a>
+		</li>
 	</ul>
 
     <div class="banner"><script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=1"></script></div>
