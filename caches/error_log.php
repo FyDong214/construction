@@ -456,3 +456,6 @@
 <?php exit;?>06-27 16:37:04 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
 <?php exit;?>06-27 16:38:03 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
 <?php exit;?>06-27 16:37:40 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-28 15:57:17 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-28 15:57:17 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>06-28 15:57:18 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
