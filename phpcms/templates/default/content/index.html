@@ -101,10 +101,19 @@
         </div>
         <div class="center-logo"></div>
         <div class="bk10"></div>
+
+        <!-- {loop subcat($catid) $r}
+        <ul>
+            <li><a href="{$CATEGORYS[$r[catid]][url]}">{$CATEGORYS[$r[catid]][catname]}</a></li>
+        </ul>
+       {/loop} -->
+       
+       
+        <div class="bk10"></div>
         {loop subcat(0,0,0,$siteid) $r}
         {php $num++}
         {php if($r['catid']==6 || $r['catid']==8 || $r['catid']==9 || $r['catid']==10 || $r['catid']==11 || $r['catid']==18) continue;}
-        <div class="box cat-area con" style="    margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+        <div class="box cat-area con" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
         		<h5 class="title-1">{$r[catname]}<a href="{$r[url]}" class="more">更多>></a></h5>
              <div class="content">
              {pc:content  action="lists" catid="$r[catid]" order="updatetime DESC" thumb="1" num="1" return="info"}
