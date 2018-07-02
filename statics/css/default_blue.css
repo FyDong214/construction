@@ -61,7 +61,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .header .nav-bar,.header .nav-bar map,.header .nav-site,.header .nav-site li.line,.header .subnav{background: url(../images/v9/nav.png) no-repeat}
 .header .nav-bar map{background-position: right -130px; display:block}
 .header .nav-site{height:33px;background-position: left -65px;background-repeat: repeat-x; margin:0 5px; padding-left:5px}
-.header .nav-site li{float:left; height:33px; line-height:33px; padding:0 20px; }
+.header .nav-site li{float:left; height:33px; line-height:33px; padding:0 18px; }
 .header .nav-site li a{color:#fff; font-size:14px; font-weight:700;*display:block}
 .header .nav-site li.line{background-position: 2px -215px; padding:0; width:10px; text-indent:-10000px}
 .header .subnav{ padding-left:16px; border-left:1px solid #d2dfed;border-right:1px solid #d2dfed;background-position: left -33px;background-repeat: repeat-x; height:32px; line-height:32px}
@@ -110,6 +110,17 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .bd.search .text.search{background: transparent;border: 1px solid white;height: 20px;line-height: 20px;width: 120px;padding: 0 4px;color: #fff;margin-left: 22px;margin-top: 3px;}
 .bd.search .button.mybutton{position: absolute;top: 1px;right: 0px;background: transparent;border: none;width: 25px;}
 
+/* 我添加的列表页样式 */
+.list.mylist{font-family: Microsoft Yahei;}
+.list.mylist>li{overflow: hidden;}
+.list.mylist>li>.left{float: left;margin-right: 15px;}
+.list.mylist>li>.right{height: 100px;overflow: hidden;}
+.list.mylist>li>.right .title{font-size: 16px;font-family: Microsoft Yahei;line-height: 30px;}
+.list.mylist>li>.right .dec{font-size: 12px;line-height: 23px;}
+.list.mylist .foot{text-align: right;font-size: 13px;}
+.crumbs.mycrumbs{padding: 6px 0 3px 0;font-size: 14px;border-bottom: 1px solid #eee;margin-bottom: 20px;}
+
+.col-right.myright{width: 20%;}
 /* 通用容器 */
 .box{zoom:1; overflow:auto; padding-bottom:10px}
 .box h6{background: url(../images/v9/title.png) no-repeat right top;color:#1e50a2; height:26px; margin-bottom:10px; line-height:26px; padding-left:10px;border-bottom:1px solid #dce7f3; position:relative}
@@ -184,7 +195,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .blogroll {}
 .blogroll h5{ background:none; font-size:12px; margin:0 2px}
 /* 当前位置 */
-.crumbs{background: url(../images/v9/icon.png) no-repeat left -38px; padding:3px 0 3px 18px; font-family:"宋体"; border-bottom:1px solid #c3d4e7; margin-bottom:10px}
+.crumbs{background: url() no-repeat left -38px; padding:3px 0 3px 18px; font-family:"宋体"; border-bottom:1px solid #c3d4e7; margin-bottom:10px}
 .crumbs span{color:#7e7e7e}
 /* 栏目信息搜索 */
 .search-form{ background-color:#FFFCED;border:1px solid #FFBF7A; padding:5px 10px; overflow:hidden;zoom:1}

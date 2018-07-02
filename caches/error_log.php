@@ -592,3 +592,44 @@
 <?php exit;?>06-28 17:51:22 | 2 | db_mysqli::errno(): Couldn't fetch mysqli | phpcms/libs/classes/db_mysqli.class.php | 397
 <?php exit;?>06-28 17:51:22 | 2 | db_mysqli::errno(): Couldn't fetch mysqli | phpcms/libs/classes/db_mysqli.class.php | 397
 <?php exit;?>06-28 17:51:22 | 2 | db_mysqli::error(): Couldn't fetch mysqli | phpcms/libs/classes/db_mysqli.class.php | 390
+<?php exit;?>07-02 10:44:51 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 10:50:55 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 10:50:55 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 10:50:55 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 11:32:44 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 11:32:19 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 11:33:08 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 11:32:59 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 11:33:37 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 11:33:21 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 11:33:58 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 11:33:45 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 11:34:19 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 11:34:06 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:05:49 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 14:05:38 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:06:13 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 14:05:59 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:06:37 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 14:06:22 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:07:24 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 14:07:09 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:07:57 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 14:07:33 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:09:07 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 14:08:44 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:08:50 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:10:05 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:10:05 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 14:10:06 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 15:16:10 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 15:16:36 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 15:30:49 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 15:31:13 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 15:33:19 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 16:21:02 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 16:21:41 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-02 16:34:19 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 16:34:19 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-02 16:34:20 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-02 16:34:20 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364

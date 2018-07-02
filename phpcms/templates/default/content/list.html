@@ -1,19 +1,34 @@
 {template "content","header"}
 <!--main-->
 <div class="main">
-	<div class="col-left">
-    	<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> > </span>{catpos($catid)} 列表</div>
-    	{pc:content action="lists" catid="$catid" num="25" order="id DESC" page="$page"}
-        <ul class="list lh24 f14">
+	<div class="col-left" style="width: 70%;">
+    	<div class="crumbs mycrumbs">您所在的位置：<a href="{siteurl($siteid)}">首页</a><span> > </span>{catpos($catid)} 列表</div>
+    	{pc:content  action="lists" catid="$catid" order="id DESC" page="$page" num="10"}
+        <ul class="list lh24 f14 mylist">
 {loop $data $r}
-	<li><span class="rt">{date('Y-m-d H:i:s',$r[inputtime])}</span>·<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></li>
-	{if $n%5==0}<li class="bk20 hr"></li>{/if}
+	<li>
+        <div class="left">
+            <img src="{thumb($r[thumb],90,0)}" width="140" height="100"/>
+        </div>
+        <div class="right">
+            <p class="title"><a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></p>
+            <p class="dec">{str_cut($r['description'],408)}</p>
+        </div>
+        <div class="foot">发表于：{date('Y-m-d H:i:s',$r[inputtime])}</div>
+    </li>
+	<li class="bk20 hr" style="height: 3px;margin-bottom: 20px;"></li>
 {/loop}
         </ul>
         <div id="pages" class="text-c">{$pages}</div>
 {/pc}
   </div>
-    <div class="col-auto">
+  <div class="col-right myright">
+      <span>推荐阅读</span>
+      <ul>
+          <li>test</li>
+      </ul>
+  </div>
+    <!-- <div class="col-auto">
         <div class="box">
             <h5 class="title-2">频道总排行</h5>
              {pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
@@ -35,6 +50,6 @@
             </ul>
             {/pc}
         </div>
-    </div>
+    </div> -->
 </div>
 {template "content","footer"}
