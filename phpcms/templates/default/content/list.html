@@ -1,7 +1,7 @@
 {template "content","header"}
 <!--main-->
 <div class="main">
-	<div class="col-left" style="width: 70%;">
+	<div class="col-left" style="width: 72%;">
     	<div class="crumbs mycrumbs">您所在的位置：<a href="{siteurl($siteid)}">首页</a><span> > </span>{catpos($catid)} 列表</div>
     	{pc:content  action="lists" catid="$catid" order="id DESC" page="$page" num="10"}
         <ul class="list lh24 f14 mylist">
@@ -23,10 +23,43 @@
 {/pc}
   </div>
   <div class="col-right myright">
-      <span>推荐阅读</span>
-      <ul>
-          <li>test</li>
-      </ul>
+      <div class="title">阅读推荐</div>
+      <div class="content">
+    {pc:content  action="lists" catid="19" order="id DESC" num="10"}
+        <ul class="list">
+        {loop $data $k $v}
+            <li>
+                <i class="triggle"></i>
+                <a href="{$v[url]}" title="{$v[title]}" target="_blank"{title_style($v[style])}>{str_cut($v[title], 50)}</a>
+            </li>
+        {/loop}
+        </ul>
+        {/pc}
+    </div>
+    <div class="search">
+        <div class="tab" id="search">
+            {php $j=0}
+            {php $search_model = getcache('search_model_'.$siteid, 'search');}
+            {loop $search_model $k=>$v}
+            {php $j++;}
+                <!-- <a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this));" style="outline:medium none;" hidefocus="true" {if $j==1 && $typeid=$v['typeid']} class="on" {/if}>{$v['name']}</a>{if $j != count($search_model)}<span> | </span>{/if} -->
+            {/loop}
+            {php unset($j);}
+        </div>
+        <i class="news-ser"></i>
+        <div class="bd">
+            <form action="{APP_PATH}index.php" method="get" target="_blank">
+                <input type="hidden" name="m" value="search"/>
+                <input type="hidden" name="c" value="index"/>
+                <input type="hidden" name="a" value="init"/>
+                <input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+                <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+                <input type="text" class="text sertext" name="q" id="q" />
+                <i class="iconfont icon-sousuo search"></i>
+                <input type="submit" value="" class="button listbutton" />
+            </form>
+        </div>
+    </div>
   </div>
     <!-- <div class="col-auto">
         <div class="box">

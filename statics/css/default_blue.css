@@ -118,12 +118,21 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .list.mylist>li>.right .title{font-size: 16px;font-family: Microsoft Yahei;line-height: 30px;}
 .list.mylist>li>.right .dec{font-size: 12px;line-height: 23px;}
 .list.mylist .foot{text-align: right;font-size: 13px;}
-.crumbs.mycrumbs{padding: 6px 0 3px 0;font-size: 14px;border-bottom: 1px solid #eee;margin-bottom: 20px;}
+.crumbs.mycrumbs{padding: 6px 0 3px 0;font-size: 14px;border-bottom: 1px solid #ced3e7;margin-bottom: 20px;}
 
-.col-right.myright{width: 20%;}
+.col-right.myright{width: 24%; font-family: Microsoft Yahei;}
+.col-right.myright>.title{font-size: 18px;color: #4e85c0;border-bottom: 1px solid #ced3e7;margin: 3px 0 10px;text-indent: 8px;}
+.col-right.myright .list{font-size: 13px;}
+.col-right.myright .list>li{height: 36px;line-height: 36px;border-bottom: 1px solid #eee;}
+.col-right.myright .triggle{display: inline-block;border-top: 5px solid transparent;border-right: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 7px solid #1d71b7;}
+.col-right.myright .search{position: relative;margin-top: 30px;}
+.col-right.myright .search .news-ser{display: inline-block;width: 120px;height: 30px; background: url(../images/con/news-ser.png) no-repeat right top;}
+.col-right.myright .search .iconfont.icon-sousuo.search{position: absolute;right: 0;z-index: 1;color: #fff;font-weight: 600;}
+.col-right.myright .search .sertext{width: 226px;height: 34px;background: #eee;font-size: 14px;border: 1px solid #eee;}
+.col-right.myright .search .listbutton {position: absolute;right: 0;bottom: 0;background: #299edb;width: 26px;}
 /* 通用容器 */
 .box{zoom:1; overflow:auto; padding-bottom:10px}
-.box h6{background: url(../images/v9/title.png) no-repeat right top;color:#1e50a2; height:26px; margin-bottom:10px; line-height:26px; padding-left:10px;border-bottom:1px solid #dce7f3; position:relative}
+.box h6{background: url(../images/con/title.png) no-repeat right top;color:#1e50a2; height:26px; margin-bottom:10px; line-height:26px; padding-left:10px;border-bottom:1px solid #dce7f3; position:relative}
 .box h6{ margin-bottom:0}
 .box h5.title-1,.box h6.title-1{background-position: right -52px; position: relative;}
 .box h5.title-2,.box h6.title-2{background-position: right -100px}
