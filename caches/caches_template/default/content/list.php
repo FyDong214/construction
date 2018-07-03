@@ -56,9 +56,13 @@
                 <input type="hidden" name="siteid" value="<?php echo $siteid;?>" id="siteid"/>
                 <input type="text" class="text sertext" name="q" id="q" />
                 <i class="iconfont icon-sousuo search"></i>
+                <div class="back"></div>
                 <input type="submit" value="" class="button listbutton" />
             </form>
         </div>
+    </div>
+    <div class="adver">
+        <script language="javascript" src="<?php echo APP_PATH;?>index.php?m=poster&c=index&a=show_poster&id=12"></script>
     </div>
   </div>
     <!-- <div class="col-auto">

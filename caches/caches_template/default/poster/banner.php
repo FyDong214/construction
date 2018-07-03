@@ -1,4 +1,4 @@
-function PCMSAD(PID) {
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?>function PCMSAD(PID) {
   this.ID        = PID;
   this.PosID  = 0; 
   this.ADID		  = 0;
@@ -20,7 +20,7 @@ function PCMSAD(PID) {
 function statAD() {
 	var new_element = document.createElement("script"); 
 	new_element.type = "text/javascript";
-	new_element.src="http://localhost/construction/index.php?m=poster&c=index&a=show&siteid="+this.SiteID+"&id="+this.ADID+"&spaceid="+this.PosID; 
+	new_element.src="<?php echo APP_PATH;?>index.php?m=poster&c=index&a=show&siteid="+this.SiteID+"&id="+this.ADID+"&spaceid="+this.PosID; 
 	document.body.appendChild(new_element);
 }
 
@@ -44,29 +44,29 @@ function showADContent() {
   document.write(str);
 }
  
-var cmsAD_11 = new PCMSAD('cmsAD_11'); 
-cmsAD_11.PosID = 11; 
-cmsAD_11.ADID = 13; 
-cmsAD_11.ADType = "images"; 
-cmsAD_11.ADName = "首页广告"; 
-cmsAD_11.ADContent = "{'Images':[{'imgADLinkUrl':'http%3A%2F%2Fwww.baidu.com','imgADAlt':'','ImgPath':'http://localhost/construction/uploadfile/2018/0627/20180627043751755.jpg'}],'imgADLinkTarget':'New','Count':'1','showAlt':'Y'}"; 
-cmsAD_11.URL = "http://localhost/construction/index.php?m=poster&c=index"; 
-cmsAD_11.SiteID = 1; 
-cmsAD_11.Width = 210; 
-cmsAD_11.Height = 266; 
-cmsAD_11.UploadFilePath = ''; 
-cmsAD_11.ShowAD();
+var cmsAD_<?php echo $spaceid;?> = new PCMSAD('cmsAD_<?php echo $spaceid;?>'); 
+cmsAD_<?php echo $spaceid;?>.PosID = <?php echo $spaceid;?>; 
+cmsAD_<?php echo $spaceid;?>.ADID = <?php echo $p_id;?>; 
+cmsAD_<?php echo $spaceid;?>.ADType = "<?php echo $p_type;?>"; 
+cmsAD_<?php echo $spaceid;?>.ADName = "<?php echo $p_name;?>"; 
+cmsAD_<?php echo $spaceid;?>.ADContent = "{'Images':[{'imgADLinkUrl':'<?php echo urlencode($p_setting[1]['linkurl']);?>','imgADAlt':'<?php echo $p_setting['1']['alt'];?>','ImgPath':'<?php echo $p_type=='images' ? $p_setting[1]['imageurl'] : $p_setting[1]['flashurl'];?>'}],'imgADLinkTarget':'New','Count':'1','showAlt':'Y'}"; 
+cmsAD_<?php echo $spaceid;?>.URL = "<?php echo APP_PATH;?>index.php?m=poster&c=index"; 
+cmsAD_<?php echo $spaceid;?>.SiteID = <?php echo $siteid;?>; 
+cmsAD_<?php echo $spaceid;?>.Width = <?php echo $width;?>; 
+cmsAD_<?php echo $spaceid;?>.Height = <?php echo $height;?>; 
+cmsAD_<?php echo $spaceid;?>.UploadFilePath = ''; 
+cmsAD_<?php echo $spaceid;?>.ShowAD();
 
 var isIE=!!window.ActiveXObject; 
 if (isIE){
 
 	if (document.readyState=="complete"){
-		cmsAD_11.Stat();
+		cmsAD_<?php echo $spaceid;?>.Stat();
 	} else {
 		document.onreadystatechange=function(){
-			if(document.readyState=="complete") cmsAD_11.Stat();
+			if(document.readyState=="complete") cmsAD_<?php echo $spaceid;?>.Stat();
 		}
 	}
 } else {
-	cmsAD_11.Stat();
+	cmsAD_<?php echo $spaceid;?>.Stat();
 }

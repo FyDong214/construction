@@ -44,29 +44,29 @@ function showADContent() {
   document.write(str);
 }
  
-var cmsAD_11 = new PCMSAD('cmsAD_11'); 
-cmsAD_11.PosID = 11; 
-cmsAD_11.ADID = 13; 
-cmsAD_11.ADType = "images"; 
-cmsAD_11.ADName = "首页广告"; 
-cmsAD_11.ADContent = "{'Images':[{'imgADLinkUrl':'http%3A%2F%2Fwww.baidu.com','imgADAlt':'','ImgPath':'http://localhost/construction/uploadfile/2018/0627/20180627043751755.jpg'}],'imgADLinkTarget':'New','Count':'1','showAlt':'Y'}"; 
-cmsAD_11.URL = "http://localhost/construction/index.php?m=poster&c=index"; 
-cmsAD_11.SiteID = 1; 
-cmsAD_11.Width = 210; 
-cmsAD_11.Height = 266; 
-cmsAD_11.UploadFilePath = ''; 
-cmsAD_11.ShowAD();
+var cmsAD_12 = new PCMSAD('cmsAD_12'); 
+cmsAD_12.PosID = 12; 
+cmsAD_12.ADID = 14; 
+cmsAD_12.ADType = "images"; 
+cmsAD_12.ADName = "列表页广告"; 
+cmsAD_12.ADContent = "{'Images':[{'imgADLinkUrl':'http%3A%2F%2Fwww.baidu.com','imgADAlt':'','ImgPath':'http://localhost/construction/uploadfile/2018/0703/20180703123648445.png'}],'imgADLinkTarget':'New','Count':'1','showAlt':'Y'}"; 
+cmsAD_12.URL = "http://localhost/construction/index.php?m=poster&c=index"; 
+cmsAD_12.SiteID = 1; 
+cmsAD_12.Width = 230; 
+cmsAD_12.Height = 580; 
+cmsAD_12.UploadFilePath = ''; 
+cmsAD_12.ShowAD();
 
 var isIE=!!window.ActiveXObject; 
 if (isIE){
 
 	if (document.readyState=="complete"){
-		cmsAD_11.Stat();
+		cmsAD_12.Stat();
 	} else {
 		document.onreadystatechange=function(){
-			if(document.readyState=="complete") cmsAD_11.Stat();
+			if(document.readyState=="complete") cmsAD_12.Stat();
 		}
 	}
 } else {
-	cmsAD_11.Stat();
+	cmsAD_12.Stat();
 }

@@ -19,7 +19,7 @@
 	<li class="bk20 hr" style="height: 3px;margin-bottom: 20px;"></li>
 {/loop}
         </ul>
-        <div id="pages" class="text-c">{$pages}</div>
+        <div id="pages" class="text-c" style="text-align: right;">{$pages}</div>
 {/pc}
   </div>
   <div class="col-right myright">
@@ -56,9 +56,13 @@
                 <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
                 <input type="text" class="text sertext" name="q" id="q" />
                 <i class="iconfont icon-sousuo search"></i>
+                <div class="back"></div>
                 <input type="submit" value="" class="button listbutton" />
             </form>
         </div>
+    </div>
+    <div class="adver">
+        <script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=12"></script>
     </div>
   </div>
     <!-- <div class="col-auto">

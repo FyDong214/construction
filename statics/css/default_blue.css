@@ -125,11 +125,18 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .col-right.myright .list{font-size: 13px;}
 .col-right.myright .list>li{height: 36px;line-height: 36px;border-bottom: 1px solid #eee;}
 .col-right.myright .triggle{display: inline-block;border-top: 5px solid transparent;border-right: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 7px solid #1d71b7;}
-.col-right.myright .search{position: relative;margin-top: 30px;}
+.col-right.myright .search{position: relative;margin: 30px 0 60px;}
 .col-right.myright .search .news-ser{display: inline-block;width: 120px;height: 30px; background: url(../images/con/news-ser.png) no-repeat right top;}
-.col-right.myright .search .iconfont.icon-sousuo.search{position: absolute;right: 0;z-index: 1;color: #fff;font-weight: 600;}
-.col-right.myright .search .sertext{width: 226px;height: 34px;background: #eee;font-size: 14px;border: 1px solid #eee;}
-.col-right.myright .search .listbutton {position: absolute;right: 0;bottom: 0;background: #299edb;width: 26px;}
+.col-right.myright .search .iconfont.icon-sousuo.search{position: absolute;right: 0;z-index: 1;color: #fff;font-weight: 600;bottom: 0;top: 4px; font-size: 24px;right: 6px;}
+.col-right.myright .search .sertext{width: 226px;height: 40px;background: #eee;font-size: 14px;border: 1px solid #eee;}
+.col-right.myright .search .back{    position: absolute;
+    width: 41px;
+    height: 41px;
+    background: #299edb;
+    bottom: 0;
+    right: 0;
+    border-radius: 3px;}
+.col-right.myright .search .listbutton {position: absolute;right: 0;bottom: 0;background: transparent;height: 41px;width: 41px;border-radius: 3px;border: 1px solid #299edb;z-index: 1;}
 /* 通用容器 */
 .box{zoom:1; overflow:auto; padding-bottom:10px}
 .box h6{background: url(../images/con/title.png) no-repeat right top;color:#1e50a2; height:26px; margin-bottom:10px; line-height:26px; padding-left:10px;border-bottom:1px solid #dce7f3; position:relative}
