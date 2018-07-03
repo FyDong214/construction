@@ -1,12 +1,22 @@
-<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php include template("content","header"); ?>
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php include template("content","header_show"); ?>
 <div class="main">
 	<div class="col-left">
-    	<div class="crumbs"><a href="<?php echo siteurl($siteid);?>">首页</a><span> &gt; </span><?php echo catpos($catid);?> 正文</div>
-        <div id="Article">
-        	<h1><?php echo $title;?><br />
-<span><?php echo $inputtime;?>&nbsp;&nbsp;&nbsp;来源：<?php echo $copyfrom;?>&nbsp;&nbsp;&nbsp;评论：<a href="#comment_iframe" id="comment">0</a> 点击：</span><span id="hits"></span></h1>
-			<?php if($description) { ?><div class="summary" ><?php echo $description;?></div><?php } ?>
-			<div class="content">
+		<div class="crumbs mycrumbs" style="border: none;margin: 10px 0;">您所在的位置：<a href="<?php echo siteurl($siteid);?>">首页</a><span> &gt; </span><?php echo catpos($catid);?> 正文</div>
+		<div class="adver">
+			<script language="javascript" src="<?php echo APP_PATH;?>index.php?m=poster&c=index&a=show_poster&id=13"></script>
+		</div>
+        <div id="Article" style="border: none;">
+        	<h1 style="font-size: 34px;font-weight: 500; padding: 50px 0 20px;">
+				<i class="logo"></i>
+				<?php echo str_cut($title, 60);?>
+				<br />
+<span style="display: inline-block;margin-top: 20px;"><?php echo $inputtime;?>&nbsp;&nbsp;&nbsp;来源：<?php echo $copyfrom;?>&nbsp;&nbsp;&nbsp;
+	<!-- 评论：<a href="#comment_iframe" id="comment">0</a>  	点击：-->
+</span>
+	<!-- <span id="hits"></span> -->
+</h1>
+			<!-- <?php if($description) { ?><div class="summary" ><?php echo $description;?></div><?php } ?> -->
+			<div class="content" style="font-size: 15px;line-height: 30px;font-family: SimSun;">
 			<?php if($allow_visitor==1) { ?>
 				<?php echo $content;?>
 				<!--内容关联投票-->
@@ -15,6 +25,14 @@
 			<?php } else { ?>
 				<CENTER><a href="<?php echo APP_PATH;?>index.php?m=content&c=readpoint&allow_visitor=<?php echo $allow_visitor;?>"><font color="red">阅读此信息需要您支付 <B><I><?php echo $readpoint;?> <?php if($paytype) { ?>元<?php } else { ?>点<?php } ?></I></B>，点击这里支付</font></a></CENTER>
 			<?php } ?>
+			<div style="text-align: right;">
+				责任编辑：
+				<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=15a09ed5179e56192d39bf1fbba5e3a8&sql=SELECT+%2A+FROM+v9_admin+order+by+userid+desc&num=1&cache=3600&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$tag_cache_name = md5(implode('&',array('sql'=>'SELECT * FROM v9_admin order by userid desc',)).'15a09ed5179e56192d39bf1fbba5e3a8');if(!$data = tpl_cache($tag_cache_name,3600)){pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("SELECT * FROM v9_admin order by userid desc LIMIT 1");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);if(!empty($data)){setcache($tag_cache_name, $data, 'tpl_data');}}?>
+				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+					<?php echo $v['realname'];?>
+				<?php $n++;}unset($n); ?>
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+			</div>
 			</div>
 <?php if($titles) { ?>
 <fieldset>
@@ -36,19 +54,23 @@
           <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=59d3146c936b0bbb61d83c4d89437c20&action=relation&relation=%24relation&id=%24id&catid=%24catid&num=5&keywords=%24rs%5Bkeywords%5D\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'relation')) {$data = $content_tag->relation(array('relation'=>$relation,'id'=>$id,'catid'=>$catid,'keywords'=>$rs[keywords],'limit'=>'5',));}?>
               <?php if($data) { ?>
                 <div class="related">
-                    <h5 class="blue">延伸阅读：</h5>
+                    <h5 class="blue" style="font-size: 18px;font-family: MicrosoftYaHei;">相关阅读：</h5>
                     <ul class="list blue lh24 f14">
                         <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
-                            <li>·<a href="<?php echo $r['url'];?>" target="_blank"><?php echo $r['title'];?></a><span>(<?php echo date('Y-m-d',$r[inputtime]);?>)</span></li>
+							<li style="font-family: MicrosoftYaHei;border-bottom: 1px solid #eee;margin-top: 10px;">
+								<a style="font-size: 15px;color: #444;" href="<?php echo $r['url'];?>" target="_blank"><?php echo $r['title'];?></a>
+								<p class="dec" style="font-size: 13px;"><?php echo str_cut($r['description'],420);?></p>
+								<div style="font-size: 15px;margin: 12px 0 6px;"><?php echo date('Y-m-d',$r[inputtime]);?></div>
+							</li>
                         <?php $n++;}unset($n); ?>
                     </ul>
-                </div>
-              <?php } ?>
+				</div>
+			  <?php } ?>
           <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
           <div class="bk15"></div>
-            <?php if(module_exists('mood')) { ?><script type="text/javascript" src="<?php echo APP_PATH;?>index.php?m=mood&c=index&a=init&id=<?php echo id_encode($catid,$id,$siteid);?>"></script><?php } ?>
+            <!-- <?php if(module_exists('mood')) { ?><script type="text/javascript" src="<?php echo APP_PATH;?>index.php?m=mood&c=index&a=init&id=<?php echo id_encode($catid,$id,$siteid);?>"></script><?php } ?> -->
       </div>
-      <div class="Article-Tool">
+      <!-- <div class="Article-Tool">
           分享到：
 		  <img src="http://v.t.qq.com/share/images/s/weiboicon16.png" style="padding-bottom:3px;" onclick="postToWb();" class="cu" title="分享到腾讯微博"/><script type="text/javascript">
 	function postToWb(){
@@ -71,7 +93,7 @@
 		<a href="javascript:;" onclick="add_favorite('<?php echo addslashes($title);?>');" class="t6">收藏</a>
 	  </span>
 
-	  </div>
+	  </div> -->
       <div class="bk10"></div>
       <?php if($allow_comment && module_exists('comment')) { ?>
       <iframe src="<?php echo APP_PATH;?>index.php?m=comment&c=index&a=init&commentid=<?php echo id_encode("content_$catid",$id,$siteid);?>&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
@@ -87,7 +109,7 @@
         </div>
         <?php } ?>
   </div>
-    <div class="col-auto">
+    <!-- <div class="col-auto">
         <div class="box">
             <h5 class="title-2">频道总排行</h5>
             <ul class="content digg">
@@ -109,10 +131,10 @@
 			<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
             </ul>
         </div>
-    </div>
+    </div> -->
 </div>
 <script type="text/javascript">
-<!--
+// <!--
 	function show_ajax(obj) {
 		var keywords = $(obj).text();
 		var offset = $(obj).offset();

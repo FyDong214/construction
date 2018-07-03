@@ -646,3 +646,53 @@
 <?php exit;?>07-02 16:56:26 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
 <?php exit;?>07-02 16:56:26 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
 <?php exit;?>07-02 16:56:26 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-03 15:29:47 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 15:29:47 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 15:30:42 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 15:30:42 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:15:27 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:15:27 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:16:03 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:16:03 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:21:28 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:21:28 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:22:00 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:22:00 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:22:22 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:22:22 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:30:05 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:30:05 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:39:12 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-03 16:39:12 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-03 16:39:13 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:39:13 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:44:33 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:44:33 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:45:55 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:45:55 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:46:57 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:46:57 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:47:07 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:47:07 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:47:46 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:47:46 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 16:51:56 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 16:51:56 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 17:18:31 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 17:18:31 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 17:22:53 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 17:22:53 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 17:23:19 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 17:23:19 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 17:23:51 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 17:23:51 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 17:23:58 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/show.php on line 62 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-03 17:23:58 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/show.php on line 62 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-03 17:23:58 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/show.php on line 62 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-03 17:23:58 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/show.php on line 62 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-03 17:23:58 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/show.php on line 62 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-03 17:23:51 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-03 17:28:02 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 17:28:02 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-03 17:35:57 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-03 17:35:57 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364

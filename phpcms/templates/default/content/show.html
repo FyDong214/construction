@@ -1,12 +1,22 @@
-{template "content","header"}
+{template "content","header_show"}
 <div class="main">
 	<div class="col-left">
-    	<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> &gt; </span>{catpos($catid)} 正文</div>
-        <div id="Article">
-        	<h1>{$title}<br />
-<span>{$inputtime}&nbsp;&nbsp;&nbsp;来源：{$copyfrom}&nbsp;&nbsp;&nbsp;评论：<a href="#comment_iframe" id="comment">0</a> 点击：</span><span id="hits"></span></h1>
-			{if $description}<div class="summary" >{$description}</div>{/if}
-			<div class="content">
+		<div class="crumbs mycrumbs" style="border: none;margin: 10px 0;">您所在的位置：<a href="{siteurl($siteid)}">首页</a><span> &gt; </span>{catpos($catid)} 正文</div>
+		<div class="adver">
+			<script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=13"></script>
+		</div>
+        <div id="Article" style="border: none;">
+        	<h1 style="font-size: 34px;font-weight: 500; padding: 50px 0 20px;">
+				<i class="logo"></i>
+				{str_cut($title, 60)}
+				<br />
+<span style="display: inline-block;margin-top: 20px;">{$inputtime}&nbsp;&nbsp;&nbsp;来源：{$copyfrom}&nbsp;&nbsp;&nbsp;
+	<!-- 评论：<a href="#comment_iframe" id="comment">0</a>  	点击：-->
+</span>
+	<!-- <span id="hits"></span> -->
+</h1>
+			<!-- {if $description}<div class="summary" >{$description}</div>{/if} -->
+			<div class="content" style="font-size: 15px;line-height: 30px;font-family: SimSun;">
 			{if $allow_visitor==1}
 				{$content}
 				<!--内容关联投票-->
@@ -15,6 +25,14 @@
 			{else}
 				<CENTER><a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}"><font color="red">阅读此信息需要您支付 <B><I>{$readpoint} {if $paytype}元{else}点{/if}</I></B>，点击这里支付</font></a></CENTER>
 			{/if}
+			<div style="text-align: right;">
+				责任编辑：
+				{pc:get sql="SELECT * FROM v9_admin order by userid desc" num="1" cache="3600" return="data"}
+				{loop $data $v}
+					{$v['realname']}
+				{/loop}
+				{/pc}
+			</div>
 			</div>
 {if $titles}
 <fieldset>
@@ -36,19 +54,23 @@
           {pc:content action="relation" relation="$relation" id="$id" catid="$catid" num="5" keywords="$rs[keywords]"}
               {if $data}
                 <div class="related">
-                    <h5 class="blue">延伸阅读：</h5>
+                    <h5 class="blue" style="font-size: 18px;font-family: MicrosoftYaHei;">相关阅读：</h5>
                     <ul class="list blue lh24 f14">
                         {loop $data $r}
-                            <li>·<a href="{$r[url]}" target="_blank">{$r[title]}</a><span>({date('Y-m-d',$r[inputtime])})</span></li>
+							<li style="font-family: MicrosoftYaHei;border-bottom: 1px solid #eee;margin-top: 10px;">
+								<a style="font-size: 15px;color: #444;" href="{$r[url]}" target="_blank">{$r[title]}</a>
+								<p class="dec" style="font-size: 13px;">{str_cut($r['description'],420)}</p>
+								<div style="font-size: 15px;margin: 12px 0 6px;">{date('Y-m-d',$r[inputtime])}</div>
+							</li>
                         {/loop}
                     </ul>
-                </div>
-              {/if}
+				</div>
+			  {/if}
           {/pc}
           <div class="bk15"></div>
-            {if module_exists('mood')}<script type="text/javascript" src="{APP_PATH}index.php?m=mood&c=index&a=init&id={id_encode($catid,$id,$siteid)}"></script>{/if}
+            <!-- {if module_exists('mood')}<script type="text/javascript" src="{APP_PATH}index.php?m=mood&c=index&a=init&id={id_encode($catid,$id,$siteid)}"></script>{/if} -->
       </div>
-      <div class="Article-Tool">
+      <!-- <div class="Article-Tool">
           分享到：
 		  <img src="http://v.t.qq.com/share/images/s/weiboicon16.png" style="padding-bottom:3px;" onclick="postToWb();" class="cu" title="分享到腾讯微博"/><script type="text/javascript">
 	function postToWb(){
@@ -71,7 +93,7 @@
 		<a href="javascript:;" onclick="add_favorite('{addslashes($title)}');" class="t6">收藏</a>
 	  </span>
 
-	  </div>
+	  </div> -->
       <div class="bk10"></div>
       {if $allow_comment && module_exists('comment')}
       <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
@@ -87,7 +109,7 @@
         </div>
         {/if}
   </div>
-    <div class="col-auto">
+    <!-- <div class="col-auto">
         <div class="box">
             <h5 class="title-2">频道总排行</h5>
             <ul class="content digg">
@@ -109,10 +131,10 @@
 			{/pc}
             </ul>
         </div>
-    </div>
+    </div> -->
 </div>
 <script type="text/javascript">
-<!--
+// <!--
 	function show_ajax(obj) {
 		var keywords = $(obj).text();
 		var offset = $(obj).offset();
