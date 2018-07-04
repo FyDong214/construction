@@ -25,7 +25,7 @@
   <div class="col-right myright">
       <div class="title">阅读推荐</div>
       <div class="content">
-    {pc:content  action="lists" catid="19" order="id DESC" num="10"}
+    {pc:content  action="lists" catid="$catid" order="id DESC" num="10"}
         <ul class="list">
         {loop $data $k $v}
             <li>

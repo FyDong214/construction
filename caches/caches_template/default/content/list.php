@@ -25,7 +25,7 @@
   <div class="col-right myright">
       <div class="title">阅读推荐</div>
       <div class="content">
-    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=359191eb83f1f27de33ba4036343fe22&action=lists&catid=19&order=id+DESC&num=10\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'19','order'=>'id DESC','limit'=>'10',));}?>
+    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=d5bd68e13b6d1077c31c72cf3f0c6b64&action=lists&catid=%24catid&order=id+DESC&num=10\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>$catid,'order'=>'id DESC','limit'=>'10',));}?>
         <ul class="list">
         <?php $n=1; if(is_array($data)) foreach($data AS $k => $v) { ?>
             <li>
