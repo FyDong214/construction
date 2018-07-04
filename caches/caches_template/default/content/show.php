@@ -6,7 +6,7 @@
 			<script language="javascript" src="<?php echo APP_PATH;?>index.php?m=poster&c=index&a=show_poster&id=13"></script>
 		</div>
         <div id="Article" style="border: none;">
-        	<h1 style="font-size: 34px;font-weight: 500; padding: 50px 0 20px;">
+        	<h1 style="font-size: 34px;font-weight: 500; padding: 50px 0 20px;margin-bottom: 20px;">
 				<i class="logo"></i>
 				<?php echo str_cut($title, 60);?>
 				<br />
