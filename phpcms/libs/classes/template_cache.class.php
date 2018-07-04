@@ -133,6 +133,7 @@ final class template_cache {
 		}
 		$str = '';
 		$num = isset($num) && intval($num) ? intval($num) : 20;
+		// $num = isset($num)? $num : 20;
 		$cache = isset($cache) && intval($cache) ? intval($cache) : 0;
 		$return = isset($return) && trim($return) ? trim($return) : 'data';
 		if (!isset($urlrule)) $urlrule = '';

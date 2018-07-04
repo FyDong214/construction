@@ -50,8 +50,9 @@
             <p class="f14">
                 <strong>上一篇：</strong><a href="<?php echo $previous_page['url'];?>"><?php echo $previous_page['title'];?></a><br />
                 <strong>下一篇：</strong><a href="<?php echo $next_page['url'];?>"><?php echo $next_page['title'];?></a>
-            </p>
-          <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=59d3146c936b0bbb61d83c4d89437c20&action=relation&relation=%24relation&id=%24id&catid=%24catid&num=5&keywords=%24rs%5Bkeywords%5D\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'relation')) {$data = $content_tag->relation(array('relation'=>$relation,'id'=>$id,'catid'=>$catid,'keywords'=>$rs[keywords],'limit'=>'5',));}?>
+			</p>
+
+          <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=300c38cc18e71118feff918085ce4418&action=relation&relation=%24relation&id=%24id&catid=%24catid&num=2&keywords=%24rs%5Bkeywords%5D\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'relation')) {$data = $content_tag->relation(array('relation'=>$relation,'id'=>$id,'catid'=>$catid,'keywords'=>$rs[keywords],'limit'=>'2',));}?>
               <?php if($data) { ?>
                 <div class="related">
                     <h5 class="blue" style="font-size: 18px;font-family: MicrosoftYaHei;">相关阅读：</h5>
@@ -63,7 +64,7 @@
 								<div style="font-size: 15px;margin: 12px 0 6px;"><?php echo date('Y-m-d',$r[inputtime]);?></div>
 							</li>
                         <?php $n++;}unset($n); ?>
-                    </ul>
+					</ul>
 				</div>
 			  <?php } ?>
           <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>

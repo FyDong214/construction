@@ -696,3 +696,13 @@
 <?php exit;?>07-03 17:28:02 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
 <?php exit;?>07-03 17:35:57 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
 <?php exit;?>07-03 17:35:57 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-04 10:35:19 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-04 10:35:19 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-04 11:25:49 | 2 | Division by zero               | phpcms/libs/functions/global.func.php | 726
+<?php exit;?>07-04 11:26:42 | 2 | Division by zero               | phpcms/libs/functions/global.func.php | 726
+<?php exit;?>07-04 11:30:00 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-04 11:30:00 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-04 11:30:02 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-04 11:30:02 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-04 11:30:20 | 2 | file_put_contents(/Library/WebServer/Documents/construction/index.html): failed to open stream: Permission denied | phpcms/modules/content/classes/html.class.php | 363
+<?php exit;?>07-04 11:30:20 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364

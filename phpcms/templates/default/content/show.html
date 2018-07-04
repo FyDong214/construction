@@ -50,8 +50,9 @@
             <p class="f14">
                 <strong>上一篇：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a><br />
                 <strong>下一篇：</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
-            </p>
-          {pc:content action="relation" relation="$relation" id="$id" catid="$catid" num="5" keywords="$rs[keywords]"}
+			</p>
+
+          {pc:content action="relation" relation="$relation" id="$id" catid="$catid" num="2" keywords="$rs[keywords]"}
               {if $data}
                 <div class="related">
                     <h5 class="blue" style="font-size: 18px;font-family: MicrosoftYaHei;">相关阅读：</h5>
@@ -63,7 +64,7 @@
 								<div style="font-size: 15px;margin: 12px 0 6px;">{date('Y-m-d',$r[inputtime])}</div>
 							</li>
                         {/loop}
-                    </ul>
+					</ul>
 				</div>
 			  {/if}
           {/pc}
