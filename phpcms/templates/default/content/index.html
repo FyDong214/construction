@@ -18,7 +18,7 @@
         	{pc:content  action="lists" catid="6" order="id DESC" num="12"}
              {loop $data $r}
              {if ($n-1)%4==0}
-                <h3 class="blue_b"><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],46,'')}</a></h3>
+                <h3 class="blue_b"><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],44,'')}</a></h3>
              {else}
                 <h5 class="blue_i"><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],60,'')}</a></h5>
                 <!-- <p>{if $n==1}<img src="{thumb($r[thumb],90,60)}" width="90" height="60"/>{/if}{str_cut($r[description],112)}</p> -->

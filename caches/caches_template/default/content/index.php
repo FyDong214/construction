@@ -18,7 +18,7 @@
         	<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=64e7254e0d0b0c78d87ca32988fecb7b&action=lists&catid=6&order=id+DESC&num=12\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">修改</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'6','order'=>'id DESC','limit'=>'12',));}?>
              <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
              <?php if(($n-1)%4==0) { ?>
-                <h3 class="blue_b"><a href="<?php echo $r['url'];?>" title="<?php echo $r['title'];?>"><?php echo str_cut($r[title],46,'');?></a></h3>
+                <h3 class="blue_b"><a href="<?php echo $r['url'];?>" title="<?php echo $r['title'];?>"><?php echo str_cut($r[title],44,'');?></a></h3>
              <?php } else { ?>
                 <h5 class="blue_i"><a href="<?php echo $r['url'];?>" title="<?php echo $r['title'];?>"><?php echo str_cut($r[title],60,'');?></a></h5>
                 <!-- <p><?php if($n==1) { ?><img src="<?php echo thumb($r[thumb],90,60);?>" width="90" height="60"/><?php } ?><?php echo str_cut($r[description],112);?></p> -->

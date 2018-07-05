@@ -28,7 +28,7 @@ body fieldset.blue{border:1px solid #dce3ed}
 body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; background:none; border:none}
 .header-logo{overflow: hidden;margin-bottom: 10px;}
 .header-logo>li{float: left; margin-right: 20px;}
-.header-logo .head_1{width: 250px; height: 70px;background: url(../images/con/head_1.png) no-repeat center;background-size: 250px auto;}
+.header-logo .head_1{width: 250px; height: 70px;background-size: 250px auto;background: url(../images/con/head_1.png) no-repeat center;}
 .header-logo .head_2{width: 230px; height: 70px; background: url(../images/con/head_2.png) no-repeat center;}
 .header-logo .head_3{width: 280px; height: 70px; background: url(../images/con/head_3.png) no-repeat center;}
 .header-logo .member-search{width: 120px; height: 50px; margin-top: 10px; background: #eee;width: 120px;line-height: 50px;text-align: center;font-size: 17px;}
@@ -139,7 +139,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .body-top .nav-bar.header-show ul>li>a{float: left;color: #fff;font-size: 13px;font-family:Microsoft YaHei;line-height: 40px;width: 80px;text-align: left;}
 #Article>h1{position: relative;font-size: 34px;
     font-weight: 500;}
-#Article .logo{display: inline-block;position: absolute; top: 32px;left: -27px;width: 230px;height: 60px;background: url(../images/con/con_logo.png) no-repeat center center;background-size: 230px auto;}
+#Article .logo{display: inline-block;position: absolute; top: 32px;left: -27px;width: 230px;background-size: 230px auto;height: 60px;background: url(../images/con/con_logo.png) no-repeat center center;}
 
 /* 通用容器 */
 .box{zoom:1; overflow:auto; padding-bottom:10px}
