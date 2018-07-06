@@ -1406,3 +1406,24 @@
 <?php exit;?>07-05 16:39:47 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known | phpcms/libs/classes/http.class.php | 84
 <?php exit;?>07-05 16:39:47 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known) | phpcms/libs/classes/http.class.php | 84
 <?php exit;?>07-05 16:39:49 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-06 10:01:57 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-06 10:02:46 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-06 10:03:36 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-06 10:03:09 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-06 10:05:01 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-06 10:04:43 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-06 10:12:58 | 2 | strpos(): Empty needle         | phpcms/libs/functions/autoload/video.func.php | 111
+<?php exit;?>07-06 10:12:58 | 2 | strpos(): Empty needle         | phpcms/libs/functions/autoload/video.func.php | 111
+<?php exit;?>07-06 10:13:16 | 2 | strpos(): Empty needle         | phpcms/libs/functions/autoload/video.func.php | 111
+<?php exit;?>07-06 10:13:16 | 2 | strpos(): Empty needle         | phpcms/libs/functions/autoload/video.func.php | 111
+<?php exit;?>07-06 10:13:30 | 2 | strpos(): Empty needle         | phpcms/libs/functions/autoload/video.func.php | 111
+<?php exit;?>07-06 10:13:30 | 2 | strpos(): Empty needle         | phpcms/libs/functions/autoload/video.func.php | 111
+<?php exit;?>07-06 10:13:34 | 2 | strpos(): Empty needle         | phpcms/libs/functions/autoload/video.func.php | 111
+<?php exit;?>07-06 10:13:34 | 2 | strpos(): Empty needle         | phpcms/libs/functions/autoload/video.func.php | 111
+<?php exit;?>07-06 15:00:36 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-06 15:00:16 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-06 16:40:01 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-06 16:40:42 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-06 16:40:14 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84
+<?php exit;?>07-06 16:41:23 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-06 16:41:05 | 2 | fsockopen(): unable to connect to tool.phpcms.cn:80 (Operation timed out) | phpcms/libs/classes/http.class.php | 84

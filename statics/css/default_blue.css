@@ -87,8 +87,50 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .center-content .cat-area .content p{height: 110px;margin-bottom: 10px;}
 .center-content .cat-area .content p strong{margin-bottom: 6px;display: inline-block;}
 .center-content .cat-area .content p img{float: right;}
+.cat-area .cate{    color: #999;
+	font-size: 14px;
+	height: 40px;
+    position: absolute;
+    right: 10px;
+	top: 10px;}
+.cat-area .cate>i{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #999;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+    line-height: 17px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.cat-area .cate-children{position: absolute;
+	display: none;
+    right: 10px;
+	background: rgba(195, 222, 243,0.7);
+	width: 70px;
+	text-align: center;
+	position: absolute;
+	padding: 5px 0;
+	z-index: 1;
+}
+.cat-area .cate-children > li:first-child{
+	background: rgb(90, 159, 226);
+}
+.cat-area .cate-children>li{
+	height: 20px;
+    line-height: 20px;
+    color: #656060;
+	font-size: 13px;
+}
 .center-logo{ height: 150px; background: url(../images/con/center_logo.png) no-repeat;}
 .box h5{color: #1d71b7;font-weight: normal;font-size: 18px;line-height: 40px;}
+.cat-area.con .content>.inner{float: left;margin-right: 10px;}
 .cat-area.con .content p img{float: none;}
 .partner>h5,.nav-net>h5,.blogroll.ylink>h5{font-size: 15px;font-weight: normal;margin-bottom: 13px;color: rgb(68, 68, 68);}
 .blogroll.ylink>h5{margin: 0;}
@@ -133,12 +175,9 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .col-right.myright .search .listbutton {position: absolute;right: 0;bottom: 0;background: transparent;height: 41px;width: 41px;border-radius: 3px;border: 1px solid #299edb;z-index: 1;}
 
 /* 我添加的详情页样式 */
-.body-top .nav-bar.header-show ul{    overflow: hidden;
-    width: 975px;
-    margin: 0 auto;}
+.body-top .nav-bar.header-show ul{overflow: hidden;width: 975px;margin: 0 auto;}
 .body-top .nav-bar.header-show ul>li>a{float: left;color: #fff;font-size: 13px;font-family:Microsoft YaHei;line-height: 40px;width: 80px;text-align: left;}
-#Article>h1{position: relative;font-size: 34px;
-    font-weight: 500;}
+#Article>h1{position: relative;font-size: 34px;font-weight: 500;}
 #Article .logo{display: inline-block;position: absolute; top: 32px;left: -27px;width: 230px;height: 60px;background: url(../images/con/con_logo.png) no-repeat center center;background-size: 230px auto;}
 
 /* 通用容器 */
@@ -205,7 +244,8 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .cat-area .content p{color:#777; height:75px; overflow:hidden}
 .cat-area .content p strong{ font-size:14px; color:#333}
 /* 我添加的myStyle */
-.cat-area.con{position: relative;width: 315px;height: 320px;}
+/* .cat-area.con{position: relative;width: 315px;height: 320px;} */
+.cat-area.con{position: relative;}
 .box.cat-area.con h5.title-1{color:rgb(29, 113, 183) }
 .cat-area.con .content p {width: 315px;height: 180px;position: relative; margin-bottom: 10px;}
 .cat-area.con .content p img{width: 315px;height: 180px; margin-right: 0;}

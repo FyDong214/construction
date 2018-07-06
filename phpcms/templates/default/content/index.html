@@ -68,37 +68,126 @@
             </ul>
             {/pc}
         </div> -->
+        
         <div class="center-content">
+
                 {loop subcat(0,0,0,$siteid) $r}
                 {php $num++}
                 {php if($r['catid']==6 || $r['catid']==8 || $r['catid']==10 || $r['catid']==12 || $r['catid']==13 || $r['catid']==14 || $r['catid']==15 || $r['catid']==16 || $r['catid']==17 || $r['catid']==18) continue;}
+                <!-- 视频新闻 -->
+                {if $r['catid']==9}
                 <div class="box cat-area" {if $num%2!=0}style=" margin: 20px 20px 0 0"{/if}>
-                        <h5 class="title-1">{$r[catname]}<a href="{$r[url]}" class="more">更多>></a></h5>
-                     <div class="content">
-                     {pc:content  action="lists" catid="$r[catid]" order="updatetime DESC" thumb="1" num="1" return="info"}
-                     {loop $info $v}
-                         <p>
-                             <img src="{thumb($v[thumb],90,0)}" width="176" height="110"/>
-                            <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100)}
-                        </p>
-                      {/loop}
-                      {/pc}                
-                        {pc:content  action="lists" catid="$r[catid]" order="id DESC" num="4" return="info"}
-        
-                        <ul class="list lh24 f14">
-                        {loop $info $v}
-                            <li><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],60)}</a></li>
-                        {/loop}
-                        </ul>
-                        {/pc}
-                    </div>
+                    <h5 class="title-1">
+                        <a href="{$r[url]}">{$r[catname]}</a>
+                        <!-- <a href="{$r[url]}" class="more">更多>></a> -->
+                    </h5>
+                    {pc:content action="category" catid="$r[catid]" num="100" siteid="$siteid" order="listorder ASC"}
+                    {loop $data $rr}
+                    <a href="{$rr[url]}">{$rr[catname]}</a>
+                    
+                    {/loop}
+                    <div class="content">
+                            {pc:content  action="lists" catid="$r[catid]" order="listorder ASC" thumb="1" num="1" return="info"}
+                            {loop $info $v}
+                                <p>
+                                    <img src="{thumb($v[thumb],90,0)}" width="176" height="110"/>
+                                   <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100)}
+                               </p>
+                             {/loop}
+                             {/pc}    
+                               {pc:content  action="lists" catid="$r[catid]" order="listorder ASC" num="4" return="info"}
+                               <ul class="list lh24 f14">
+                               {loop $info $v}
+                                   <li><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],60)}</a></li>
+                               {/loop}
+                               </ul>
+                               {/pc}
+                           </div>
+                    {/pc}
                 </div>
+                {/if}
+
+                <!-- 质量安全 -->
+                {if $r['catid']==11 }
+                <div class="box cat-area" {if $num%2!=0}style=" margin: 20px 20px 0 0; position: relative;"{/if}>
+                        <h5 class="title-1">
+                            <a href="{$r[url]}">{$r[catname]}</a>
+                            <!-- <a href="{$r[url]}" class="more">更多>></a> -->
+                        </h5>
+                        {pc:content action="category" catid="11" num="1" siteid="$siteid" order="listorder ASC"}
+                        {loop $data $rr}
+                        <span class="cate" id="cate_1">{$rr[catname]}
+                            <i>+</i>
+                        </span>
+                       
+                        {/loop}
+                        {pc:content action="category" catid="$r[catid]" num="3" siteid="$siteid" order="listorder ASC"}
+                        <ul id="children" class="cate-children">
+                            {loop $data $rr}
+                            <li>{$rr[catname]}</li>
+                            {/loop}
+                        </ul>
+                        <div class="content" id="content_1">
+                        {pc:content  action="lists" catid="24" order="listorder ASC" thumb="1" num="1" return="info"}
+                        {loop $info $v}
+                            <p>
+                                <img src="{thumb($v[thumb],90,0)}" width="176" height="110"/>
+                                <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100)}
+                            </p>
+                            {/loop}
+                            {/pc}    
+                            {pc:content  action="lists" catid="24" order="listorder ASC" num="4" return="info"}
+                            <ul class="list lh24 f14">
+                            {loop $info $v}
+                                <li><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],60)}</a></li>
+                            {/loop}
+                            </ul>
+                            {/pc}
+                        </div>
+                        <div class="content" id="content_2" style="display: none;">
+                            {pc:content  action="lists" catid="25" order="listorder ASC" thumb="1" num="1" return="info"}
+                            {loop $info $v}
+                                <p>
+                                    <img src="{thumb($v[thumb],90,0)}" width="176" height="110"/>
+                                    <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100)}
+                                </p>
+                                {/loop}
+                                {/pc}    
+                                {pc:content  action="lists" catid="25" order="listorder ASC" num="4" return="info"}
+                                <ul class="list lh24 f14">
+                                {loop $info $v}
+                                    <li><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],60)}</a></li>
+                                {/loop}
+                                </ul>
+                                {/pc}
+                            </div>
+                            <div class="content" id="content_3" style="display: none;">
+                            {pc:content  action="lists" catid="26" order="listorder ASC" thumb="1" num="1" return="info"}
+                            {loop $info $v}
+                                <p>
+                                    <img src="{thumb($v[thumb],90,0)}" width="176" height="110"/>
+                                    <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong><br />{str_cut($v['description'],100)}
+                                </p>
+                                {/loop}
+                                {/pc}    
+                                {pc:content  action="lists" catid="26" order="listorder ASC" num="4" return="info"}
+                                <ul class="list lh24 f14">
+                                {loop $info $v}
+                                    <li><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],60)}</a></li>
+                                {/loop}
+                                </ul>
+                                {/pc}
+                            </div>
+                        {/pc}
+                </div>
+                {/if}
                 {if $num%2==0}<div class="bk10"></div>{/if}
                 {/loop}
                 <div class="advertices">
                         <script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=11"></script>
                 </div>
         </div>
+        
         <div class="center-logo"></div>
         <div class="bk10"></div>
 
@@ -110,31 +199,51 @@
        
        
         <div class="bk10"></div>
-        {loop subcat(0,0,0,$siteid) $r}
-        {php $num++}
-        {php if($r['catid']==6 || $r['catid']==8 || $r['catid']==9 || $r['catid']==10 || $r['catid']==11 || $r['catid']==18) continue;}
-        <div class="box cat-area con" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
-        		<h5 class="title-1">{$r[catname]}<a href="{$r[url]}" class="more">更多>></a></h5>
-             <div class="content">
-             {pc:content  action="lists" catid="$r[catid]" order="updatetime DESC" thumb="1" num="1" return="info"}
-             {loop $info $v}
-             	<p>
-             		<img src="{thumb($v[thumb],90,0)}" width="315" height="180"/>
+
+        <!-- 建筑建材 -->
+        <div class="box cat-area con" id="cate_2" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+        {pc:get sql="select * from phpcms_category where catid in (12)" return="data"} 
+        {loop $data $r} 
+            <h5 class="title-1">
+                <a href="{$r[url]}">{$r[catname]}</a>
+            </h5>
+
+            {pc:get sql="select * from phpcms_category where catid in (19)" return="data"} 
+            {loop $data $rr}
+            <div class="cate-div">
+                <span class="cate">{$rr[catname]}
+                    <i>+</i>
+                </span>
+                {pc:get sql="select * from phpcms_category where catid in (19,20)" return="data"} 
+                <ul class="cate-children">
+                    {loop $data $rr}
+                    <li>{$rr[catname]}</li>
+                    {/loop}
+                </ul>
+            </div>
+            {/loop}
+
+            <!-- 子栏目1 -->
+            <div class="content">
+                {pc:content  action="lists" catid="19" order="updatetime DESC" thumb="1" num="1" return="info"}
+                {loop $info $v}
+                <p>
+                    <img src="{thumb($v[thumb],90,0)}" width="315" height="180"/>
                     <strong><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],28)}</a></strong>
                 </p>
-              {/loop}
-              {/pc}                
-                {pc:content  action="lists" catid="$r[catid]" order="id DESC" num="4" return="info"}
-
-                <ul class="list lh24 f14">
-                {loop $info $v}
-                	<li><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],60)}</a></li>
                 {/loop}
+
+                {pc:content  action="lists" catid="19" order="id DESC" num="4" return="info"}
+                <ul class="list lh24 f14">
+                    {loop $info $v}
+                    <li><a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],60)}</a></li>
+                    {/loop}
                 </ul>
-                {/pc}
             </div>
-        </div>
-		{/loop}
+        {/loop} 
+        {/pc}
+        </div> 
+       
     </div>
     <!-- <div class="col-auto">
     	<div class="box">
@@ -280,7 +389,7 @@
 <script type="text/javascript"> 
 $(function(){
 	new slide("#main-slide","cur",650,450,1);//焦点图
-	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
+    new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
 })
 
 $('#marquee').bxSlider({
@@ -291,5 +400,73 @@ $('#marquee').bxSlider({
     slideMargin: 15,
     infiniteLoop: true,
 });
+
+$(function(){
+    $("#cate_1").mouseover(function(){
+        $("#children").css("display","block");
+    })
+    $("#cate_1").mouseout(function(){
+        $("#children").css("display","none");
+    })
+    $("#children").mouseover(function(){
+        $("#children").css("display","block");
+    })
+    $("#children").mouseout(function(){
+        $("#children").css("display","none");
+    })
+})
+
+$(function(){
+    $("#children>li:first").click(function(){
+        $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#children>li:first").css("background","#5a9fe2")
+        $("#children>li:nth-child(2)").css("background","none")
+        $("#children>li:nth-child(3)").css("background","none")
+        $("#content_1").css("display","block")
+        $("#content_2").css("display","none")
+        $("#content_3").css("display","none")
+    })
+    $("#children>li:nth-child(2)").click(function(){
+        $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#children>li:nth-child(2)").css("background","#5a9fe2")
+        $("#children>li:first").css("background","none")
+        $("#children>li:nth-child(3)").css("background","none")
+        $("#content_2").css("display","block")
+        $("#content_1").css("display","none")
+        $("#content_3").css("display","none")
+    })
+    $("#children>li:nth-child(3)").click(function(){
+        $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#children>li:nth-child(3)").css("background","#5a9fe2")
+        $("#children>li:nth-child(2)").css("background","none")
+        $("#children>li:first").css("background","none")
+        $("#content_3").css("display","block")
+        $("#content_1").css("display","none")
+        $("#content_2").css("display","none")
+    })
+})
+$(function(){
+    $("#cate_2 .cate-div").mouseover(function(){
+        $(this).children(".cate-children").css("display","block");
+    })
+    $("#cate_2 .cate-div").mouseout(function(){
+        $(this).children(".cate-children").css("display","none");
+    })
+    $("#cate_2 .cate-children").mouseover(function(){
+        $(this).css("display","block");
+    })
+    $("#cate_2 .cate-children").mouseout(function(){
+        $(this).css("display","none");
+    })
+    $("#cate_2 .cate-children>li:first").click(function(){
+        // $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
+        // $("#children>li:first").css("background","#5a9fe2")
+        // $("#children>li:nth-child(2)").css("background","none")
+        // $("#children>li:nth-child(3)").css("background","none")
+        $("#content_1").css("display","block")
+        $("#content_2").css("display","none")
+        $("#content_3").css("display","none")
+    })
+})
 </script>
 {template "content","footer"}
