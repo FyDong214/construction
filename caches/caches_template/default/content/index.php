@@ -210,12 +210,12 @@
 
             <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=deed9a2ee4a184c4a4efc8a62c4aeba7&sql=select+%2A+from+phpcms_category+where+catid+in+%2819%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (19) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
             <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
-            <div class="cate-div">
-                <span class="cate"><?php echo $rr['catname'];?>
+            <div class="cate-div" style="cursor: pointer;">
+                <span class="cate" id="jzjc_title"><?php echo $rr['catname'];?>
                     <i>+</i>
                 </span>
-                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=12c97069cac56e62aa0cefcde8be7507&sql=select+%2A+from+phpcms_category+where+catid+in+%2819%2C20%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (19,20) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
-                <ul class="cate-children">
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=8c7e9ff040a2cae946ccde47da44918a&sql=select+%2A+from+phpcms_category+where+catid+in+%2819%2C20%2C35%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (19,20,35) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                <ul class="cate-children" id="jzjc_zlm">
                     <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
                     <li><?php echo $rr['catname'];?></li>
                     <?php $n++;}unset($n); ?>
@@ -223,28 +223,462 @@
             </div>
             <?php $n++;}unset($n); ?>
 
-            
-
-            <!-- 子栏目1 -->
-            <div class="content">
-                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=7682fcd2843e41f7883b07a7a7fab024&action=lists&catid=19&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'19','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
-                <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
-                <p>
-                    <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
-                    <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
-                </p>
-                <?php $n++;}unset($n); ?>
-
-                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=c42445a78d6c90095a8fe750156a91e5&action=lists&catid=19&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'19','order'=>'id DESC','limit'=>'4',));}?>
-                <ul class="list lh24 f14">
+            <div id="jzjc_children">
+                <!-- 子栏目1 -->
+                <div class="content">
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=7682fcd2843e41f7883b07a7a7fab024&action=lists&catid=19&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'19','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
                     <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
-                    <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                    <p>
+                        <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                        <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                    </p>
                     <?php $n++;}unset($n); ?>
-                </ul>
+
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=c42445a78d6c90095a8fe750156a91e5&action=lists&catid=19&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'19','order'=>'id DESC','limit'=>'4',));}?>
+                    <ul class="list lh24 f14">
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                        <?php $n++;}unset($n); ?>
+                    </ul>
+                </div>
+                <!-- 子栏目2 -->
+                <div class="content" style="display: none;">
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=1db88bc983bcf20812720ed6b801ed02&action=lists&catid=20&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'20','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                    <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                    <p>
+                        <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                        <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                    </p>
+                    <?php $n++;}unset($n); ?>
+
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=5602d4894ead526babc30ef807f7b180&action=lists&catid=20&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'20','order'=>'id DESC','limit'=>'4',));}?>
+                    <ul class="list lh24 f14">
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                        <?php $n++;}unset($n); ?>
+                    </ul>
+                </div>
+                <!-- 子栏目3 -->
+                <div class="content" style="display: none;">
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=25cbedd592ead9e63c9d7f24f29dc0c8&action=lists&catid=35&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'35','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                    <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                    <p>
+                        <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                        <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                    </p>
+                    <?php $n++;}unset($n); ?>
+
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=2d70d9a1134c392771dcf805710720b9&action=lists&catid=35&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'35','order'=>'id DESC','limit'=>'4',));}?>
+                    <ul class="list lh24 f14">
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                        <?php $n++;}unset($n); ?>
+                    </ul>
+                </div>
             </div>
         <?php $n++;}unset($n); ?> 
         <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
         </div> 
+
+        <!-- 企业党工团 -->
+        <div class="box cat-area con" id="cate_3" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+            <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=0852ebedc53d73967b2d5e057ea188f2&sql=select+%2A+from+phpcms_category+where+catid+in+%2813%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (13) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+            <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?> 
+                <h5 class="title-1">
+                    <a href="<?php echo $r['url'];?>"><?php echo $r['catname'];?></a>
+                </h5>
+    
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=72bd904e65100f68206079241d250dfc&sql=select+%2A+from+phpcms_category+where+catid+in+%2827%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (27) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="qydgt_title"><?php echo $rr['catname'];?>
+                        <i>+</i>
+                    </span>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=1d46f1bb73aecc4abea2538ce651e27a&sql=select+%2A+from+phpcms_category+where+catid+in+%2827%2C28%2C36%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (27,28,36) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                    <ul class="cate-children" id="qydgt_zlm">
+                        <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                        <li><?php echo $rr['catname'];?></li>
+                        <?php $n++;}unset($n); ?>
+                    </ul>
+                </div>
+                <?php $n++;}unset($n); ?>
+    
+                <div id="qydgt_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=3933892dc2f398177d29070de97a6cf3&action=lists&catid=27&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'27','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=d70352ef149b941730affd32d2b831ec&action=lists&catid=27&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'27','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=440e617d85bf1219c66318b469f7299b&action=lists&catid=28&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'28','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=1173a92fd38bd8fd9895bbfa74b0f8d8&action=lists&catid=28&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'28','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=f4e508cf2bed3efdfefc29282b78fc16&action=lists&catid=36&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'36','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=ac124def19b0dc3cb05620fddf89981a&action=lists&catid=36&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'36','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php $n++;}unset($n); ?> 
+            <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+        </div>
+
+        <!-- 精准扶贫 -->
+        <div class="box cat-area con" id="cate_4" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+            <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=5c5c88d2fae5b7ed7df0bdf296db62de&sql=select+%2A+from+phpcms_category+where+catid+in+%2814%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (14) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+            <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?> 
+                <h5 class="title-1">
+                    <a href="<?php echo $r['url'];?>"><?php echo $r['catname'];?></a>
+                </h5>
+    
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=87b6bb32c46df0bd7faffb951975597c&sql=select+%2A+from+phpcms_category+where+catid+in+%2821%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (21) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="jzfp_title"><?php echo $rr['catname'];?>
+                        <i>+</i>
+                    </span>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=c98f1289300a88b9a99e1a25d987093f&sql=select+%2A+from+phpcms_category+where+catid+in+%2821%2C22%2C23%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (21,22,23) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                    <ul class="cate-children" id="jzfp_zlm">
+                        <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                        <li><?php echo $rr['catname'];?></li>
+                        <?php $n++;}unset($n); ?>
+                    </ul>
+                </div>
+                <?php $n++;}unset($n); ?>
+    
+                <div id="jzfp_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=6019a610a59d157cdab052573e40410c&action=lists&catid=21&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'21','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=ae34429d97540059f6acd9983619172f&action=lists&catid=21&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'21','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=331f58be9a31caa9a40ea37410f15856&action=lists&catid=22&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'22','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=ec1cfede5effd22a289a1170cd746494&action=lists&catid=22&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'22','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=26bdf470f695dae1897f4d07ebac870a&action=lists&catid=23&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'23','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=4db28a87435d54bec908cbe2755db343&action=lists&catid=23&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'23','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php $n++;}unset($n); ?> 
+            <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+        </div>
+
+        <!-- 一带一路 -->
+        <div class="box cat-area con" id="cate_5" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+            <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=e9c6a0548ee9d6e6a12040d5b41ed60f&sql=select+%2A+from+phpcms_category+where+catid+in+%2815%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (15) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+            <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?> 
+                <h5 class="title-1">
+                    <a href="<?php echo $r['url'];?>"><?php echo $r['catname'];?></a>
+                </h5>
+    
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=2ab8c6a48a53d9fa9421baa619ec970f&sql=select+%2A+from+phpcms_category+where+catid+in+%2829%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (29) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="ydyl_title"><?php echo $rr['catname'];?>
+                        <i>+</i>
+                    </span>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=d4b97664dcc3c1937fcd14c93d7310d9&sql=select+%2A+from+phpcms_category+where+catid+in+%2829%2C30%2C37%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (29,30,37) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                    <ul class="cate-children" id="ydyl_zlm">
+                        <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                        <li><?php echo $rr['catname'];?></li>
+                        <?php $n++;}unset($n); ?>
+                    </ul>
+                </div>
+                <?php $n++;}unset($n); ?>
+    
+                <div id="ydyl_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=5aa958195584a8c4262603374ef7c2b8&action=lists&catid=29&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'29','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=f21ddd82ea43833ac431c700bd142302&action=lists&catid=29&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'29','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=07feb6c6ef336648a0203f1200863883&action=lists&catid=30&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'30','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=e11af27feeceeb769aef62fe865b2da1&action=lists&catid=30&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'30','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=ea948af195e3ba91b4d82d558cc07f54&action=lists&catid=37&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'37','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=28a72280936234ccd7274e27ecf38a50&action=lists&catid=37&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'37','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php $n++;}unset($n); ?> 
+            <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+        </div>
+
+        <!-- 特色小镇 -->
+        <div class="box cat-area con" id="cate_6" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+            <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=df50d94ac75f71a1cf120a296dca966a&sql=select+%2A+from+phpcms_category+where+catid+in+%2816%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (16) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+            <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?> 
+                <h5 class="title-1">
+                    <a href="<?php echo $r['url'];?>"><?php echo $r['catname'];?></a>
+                </h5>
+    
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=86c235fbae48a40beef22e769a9c9b36&sql=select+%2A+from+phpcms_category+where+catid+in+%2831%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (31) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="tsxz_title"><?php echo $rr['catname'];?>
+                        <i>+</i>
+                    </span>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=1ac4389caac16c810a4b39f8c3b55cab&sql=select+%2A+from+phpcms_category+where+catid+in+%2831%2C32%2C38%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (31,32,38) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                    <ul class="cate-children" id="tsxz_zlm">
+                        <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                        <li><?php echo $rr['catname'];?></li>
+                        <?php $n++;}unset($n); ?>
+                    </ul>
+                </div>
+                <?php $n++;}unset($n); ?>
+    
+                <div id="tsxz_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=466f01efa6c3b70bce6b1e65a49e9083&action=lists&catid=31&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'31','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=c5e5711f36b32fb3f21a1bab6ee0980e&action=lists&catid=31&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'31','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=073222a58470a50d8f4b4d4a53289df7&action=lists&catid=32&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'32','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=9f02b4d47ab23209c4dd7e57284fa6b3&action=lists&catid=32&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'32','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=2f6b9c85c887878d9e777895a94a640d&action=lists&catid=38&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'38','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=180bb3a65b896ba2037a4f2f40e12786&action=lists&catid=38&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'38','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php $n++;}unset($n); ?> 
+            <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+        </div>
+
+        <!-- 北大文旅 -->
+        <div class="box cat-area con" id="cate_7" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+            <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=202c7af5b501b2395e613d4bc05a7fe0&sql=select+%2A+from+phpcms_category+where+catid+in+%2817%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (17) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+            <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?> 
+                <h5 class="title-1">
+                    <a href="<?php echo $r['url'];?>"><?php echo $r['catname'];?></a>
+                </h5>
+    
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=63be8a19a75f8b1027ec1198792d3cd3&sql=select+%2A+from+phpcms_category+where+catid+in+%2833%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (33) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="bdwl_title"><?php echo $rr['catname'];?>
+                        <i>+</i>
+                    </span>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=99a43616ff4865e1fcbb26a2588bcb17&sql=select+%2A+from+phpcms_category+where+catid+in+%2833%2C34%2C39%29&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from phpcms_category where catid in (33,34,39) LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                    <ul class="cate-children" id="bdwl_zlm">
+                        <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?>
+                        <li><?php echo $rr['catname'];?></li>
+                        <?php $n++;}unset($n); ?>
+                    </ul>
+                </div>
+                <?php $n++;}unset($n); ?>
+    
+                <div id="bdwl_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=468190b4e5b5df34a41ac814c29ec7c2&action=lists&catid=33&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'33','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=81b66a81bdf41a78d5860709006dbbcc&action=lists&catid=33&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'33','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=3043981aef05017946628138c1f39f14&action=lists&catid=34&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'34','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=7713d1fd059679606516f6083a72331e&action=lists&catid=34&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'34','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=b149aa3de4d167e58eb3508faed18a27&action=lists&catid=39&order=updatetime+DESC&thumb=1&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'39','order'=>'updatetime DESC','thumb'=>'1','limit'=>'1',));}?>
+                        <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                        <p>
+                            <img src="<?php echo thumb($v[thumb],90,0);?>" width="315" height="180"/>
+                            <strong><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],28);?></a></strong>
+                        </p>
+                        <?php $n++;}unset($n); ?>
+    
+                        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=e195b07958f27b7b9d376a575b4a3e02&action=lists&catid=39&order=id+DESC&num=4&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$info = $content_tag->lists(array('catid'=>'39','order'=>'id DESC','limit'=>'4',));}?>
+                        <ul class="list lh24 f14">
+                            <?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                            <li><a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>><?php echo str_cut($v['title'],60);?></a></li>
+                            <?php $n++;}unset($n); ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php $n++;}unset($n); ?> 
+            <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+        </div>
        
     </div>
     <!-- <div class="col-auto">
@@ -448,26 +882,184 @@ $(function(){
     })
 })
 $(function(){
-    $("#cate_2 .cate-div").mouseover(function(){
+    $(".cate-div").mouseover(function(){
         $(this).children(".cate-children").css("display","block");
     })
-    $("#cate_2 .cate-div").mouseout(function(){
+    $(".cate-div").mouseout(function(){
         $(this).children(".cate-children").css("display","none");
     })
-    $("#cate_2 .cate-children").mouseover(function(){
+    $(".cate-children").mouseover(function(){
         $(this).css("display","block");
     })
-    $("#cate_2 .cate-children").mouseout(function(){
+    $(".cate-children").mouseout(function(){
         $(this).css("display","none");
     })
     $("#cate_2 .cate-children>li:first").click(function(){
-        // $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
-        // $("#children>li:first").css("background","#5a9fe2")
-        // $("#children>li:nth-child(2)").css("background","none")
-        // $("#children>li:nth-child(3)").css("background","none")
-        $("#content_1").css("display","block")
-        $("#content_2").css("display","none")
-        $("#content_3").css("display","none")
+        $("#jzjc_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzjc_zlm>li:first").css("background","#5a9fe2")
+        $("#jzjc_zlm>li:nth-child(2)").css("background","none")
+        $("#jzjc_zlm>li:nth-child(3)").css("background","none")
+        $("#jzjc_children>div:first").css("display","block")
+        $("#jzjc_children>div:nth-child(2)").css("display","none")
+        $("#jzjc_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_2 .cate-children>li:nth-child(2)").click(function(){
+        $("#jzjc_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzjc_zlm>li:first").css("background","none")
+        $("#jzjc_zlm>li:nth-child(2)").css("background","#5a9fe2")
+        $("#jzjc_zlm>li:nth-child(3)").css("background","none")
+        $("#jzjc_children>div:first").css("display","none")
+        $("#jzjc_children>div:nth-child(2)").css("display","block")
+        $("#jzjc_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_2 .cate-children>li:nth-child(3)").click(function(){
+        $("#jzjc_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzjc_zlm>li:first").css("background","none")
+        $("#jzjc_zlm>li:nth-child(2)").css("background","none")
+        $("#jzjc_zlm>li:nth-child(3)").css("background","#5a9fe2")
+        $("#jzjc_children>div:first").css("display","none")
+        $("#jzjc_children>div:nth-child(2)").css("display","none")
+        $("#jzjc_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_3 .cate-children>li:first").click(function(){
+        $("#qydgt_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#qydgt_zlm>li:first").css("background","#5a9fe2")
+        $("#qydgt_zlm>li:nth-child(2)").css("background","none")
+        $("#qydgt_zlm>li:nth-child(3)").css("background","none")
+        $("#qydgt_children>div:first").css("display","block")
+        $("#qydgt_children>div:nth-child(2)").css("display","none")
+        $("#qydgt_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_3 .cate-children>li:nth-child(2)").click(function(){
+        $("#qydgt_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#qydgt_zlm>li:first").css("background","none")
+        $("#qydgt_zlm>li:nth-child(2)").css("background","#5a9fe2")
+        $("#qydgt_zlm>li:nth-child(3)").css("background","none")
+        $("#qydgt_children>div:first").css("display","none")
+        $("#qydgt_children>div:nth-child(2)").css("display","block")
+        $("#qydgt_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_3 .cate-children>li:nth-child(3)").click(function(){
+        $("#qydgt_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#qydgt_zlm>li:first").css("background","none")
+        $("#qydgt_zlm>li:nth-child(2)").css("background","none")
+        $("#qydgt_zlm>li:nth-child(3)").css("background","#5a9fe2")
+        $("#qydgt_children>div:first").css("display","none")
+        $("#qydgt_children>div:nth-child(2)").css("display","none")
+        $("#qydgt_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_4 .cate-children>li:first").click(function(){
+        $("#jzfp_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzfp_zlm>li:first").css("background","#5a9fe2")
+        $("#jzfp_zlm>li:nth-child(2)").css("background","none")
+        $("#jzfp_zlm>li:nth-child(3)").css("background","none")
+        $("#jzfp_children>div:first").css("display","block")
+        $("#jzfp_children>div:nth-child(2)").css("display","none")
+        $("#jzfp_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_4 .cate-children>li:nth-child(2)").click(function(){
+        $("#jzfp_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzfp_zlm>li:first").css("background","none")
+        $("#jzfp_zlm>li:nth-child(2)").css("background","#5a9fe2")
+        $("#jzfp_zlm>li:nth-child(3)").css("background","none")
+        $("#jzfp_children>div:first").css("display","none")
+        $("#jzfp_children>div:nth-child(2)").css("display","block")
+        $("#jzfp_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_4 .cate-children>li:nth-child(3)").click(function(){
+        $("#jzfp_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzfp_zlm>li:first").css("background","none")
+        $("#jzfp_zlm>li:nth-child(2)").css("background","none")
+        $("#jzfp_zlm>li:nth-child(3)").css("background","#5a9fe2")
+        $("#jzfp_children>div:first").css("display","none")
+        $("#jzfp_children>div:nth-child(2)").css("display","none")
+        $("#jzfp_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_5 .cate-children>li:first").click(function(){
+        $("#ydyl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#ydyl_zlm>li:first").css("background","#5a9fe2")
+        $("#ydyl_zlm>li:nth-child(2)").css("background","none")
+        $("#ydyl_zlm>li:nth-child(3)").css("background","none")
+        $("#ydyl_children>div:first").css("display","block")
+        $("#ydyl_children>div:nth-child(2)").css("display","none")
+        $("#ydyl_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_5 .cate-children>li:nth-child(2)").click(function(){
+        $("#ydyl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#ydyl_zlm>li:first").css("background","none")
+        $("#ydyl_zlm>li:nth-child(2)").css("background","#5a9fe2")
+        $("#ydyl_zlm>li:nth-child(3)").css("background","none")
+        $("#ydyl_children>div:first").css("display","none")
+        $("#ydyl_children>div:nth-child(2)").css("display","block")
+        $("#ydyl_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_5 .cate-children>li:nth-child(3)").click(function(){
+        $("#ydyl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#ydyl_zlm>li:first").css("background","none")
+        $("#ydyl_zlm>li:nth-child(2)").css("background","none")
+        $("#ydyl_zlm>li:nth-child(3)").css("background","#5a9fe2")
+        $("#ydyl_children>div:first").css("display","none")
+        $("#ydyl_children>div:nth-child(2)").css("display","none")
+        $("#ydyl_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_6 .cate-children>li:first").click(function(){
+        $("#tsxz_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#tsxz_zlm>li:first").css("background","#5a9fe2")
+        $("#tsxz_zlm>li:nth-child(2)").css("background","none")
+        $("#tsxz_zlm>li:nth-child(3)").css("background","none")
+        $("#tsxz_children>div:first").css("display","block")
+        $("#tsxz_children>div:nth-child(2)").css("display","none")
+        $("#tsxz_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_6 .cate-children>li:nth-child(2)").click(function(){
+        $("#tsxz_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#tsxz_zlm>li:first").css("background","none")
+        $("#tsxz_zlm>li:nth-child(2)").css("background","#5a9fe2")
+        $("#tsxz_zlm>li:nth-child(3)").css("background","none")
+        $("#tsxz_children>div:first").css("display","none")
+        $("#tsxz_children>div:nth-child(2)").css("display","block")
+        $("#tsxz_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_6 .cate-children>li:nth-child(3)").click(function(){
+        $("#tsxz_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#tsxz_zlm>li:first").css("background","none")
+        $("#tsxz_zlm>li:nth-child(2)").css("background","none")
+        $("#tsxz_zlm>li:nth-child(3)").css("background","#5a9fe2")
+        $("#tsxz_children>div:first").css("display","none")
+        $("#tsxz_children>div:nth-child(2)").css("display","none")
+        $("#tsxz_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_7 .cate-children>li:first").click(function(){
+        $("#bdwl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#bdwl_zlm>li:first").css("background","#5a9fe2")
+        $("#bdwl_zlm>li:nth-child(2)").css("background","none")
+        $("#bdwl_zlm>li:nth-child(3)").css("background","none")
+        $("#bdwl_children>div:first").css("display","block")
+        $("#bdwl_children>div:nth-child(2)").css("display","none")
+        $("#bdwl_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_7 .cate-children>li:nth-child(2)").click(function(){
+        $("#bdwl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#bdwl_zlm>li:first").css("background","none")
+        $("#bdwl_zlm>li:nth-child(2)").css("background","#5a9fe2")
+        $("#bdwl_zlm>li:nth-child(3)").css("background","none")
+        $("#bdwl_children>div:first").css("display","none")
+        $("#bdwl_children>div:nth-child(2)").css("display","block")
+        $("#bdwl_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_7 .cate-children>li:nth-child(3)").click(function(){
+        $("#bdwl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#bdwl_zlm>li:first").css("background","none")
+        $("#bdwl_zlm>li:nth-child(2)").css("background","none")
+        $("#bdwl_zlm>li:nth-child(3)").css("background","#5a9fe2")
+        $("#bdwl_children>div:first").css("display","none")
+        $("#bdwl_children>div:nth-child(2)").css("display","none")
+        $("#bdwl_children>div:nth-child(3)").css("display","block")
     })
 })
 </script>
