@@ -12,47 +12,13 @@
 <script type="text/javascript" src="<?php echo JS_PATH;?>jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo JS_PATH;?>jquery.sgallery.js"></script>
 <script type="text/javascript" src="<?php echo JS_PATH;?>search_common.js"></script>
-<script>
-	function SetHome(url){
-		if (document.all) {
-			document.body.style.behavior='url(#default#homepage)';
-			document.body.setHomePage(url);
-		}else{
-			alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
-		}
-	}
-	
-function addFavorite() {
-	var url = window.location;
-	var title = document.title;
-	var ua = navigator.userAgent.toLowerCase();
-	if (ua.indexOf("360se") > -1) {
-			alert("由于360浏览器功能限制，请按 Ctrl+D 手动收藏！");
-		}
-		else if (ua.indexOf("msie 8") > -1) {
-			window.external.AddToFavoritesBar(url, title); //IE8
-		}
-		else if (document.all) {
-	try{
-		window.external.addFavorite(url, title);
-	}catch(e){
-		alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
-	}
-		}
-		else if (window.sidebar) {
-			window.sidebar.addPanel(title, url, "");
-		}
-		else {
-	alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
-		}
-	}
-</script>
+
 <?PHP
 if($child){
    $child_arrary=explode(',',$arrchildid);
         $to_url=$CATEGORYS[$child_arrary[0]][url];
   echo "<script>window.location.href='".$to_url."'</script>";
-    }
+	}
 ?>
 </head>
 <body>
@@ -69,7 +35,7 @@ if($child){
 			<li>桌面下载</li>
 			<li>论坛登录</li>
 			<li>站点导航</li>
-			<li class="login" style="margin-left: 140px;">
+			<li class="login" style="margin-left: 100px;">
 				<div class="login lh24 blue">
 					<span class="rt">
 						<script type="text/javascript">document.write('<iframe src="<?php echo APP_PATH;?>index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=<?php echo get_siteid();?>" allowTransparency="true"  width="500" height="40" frameborder="0" scrolling="no"></iframe>')</script>
@@ -95,12 +61,14 @@ $(function(){
 			<!-- <div class="login lh24 blue"><a href="<?php echo APP_PATH;?>index.php?m=content&c=rss&siteid=<?php echo get_siteid();?>" class="rss ib">rss</a><span class="rt"><script type="text/javascript">document.write('<iframe src="<?php echo APP_PATH;?>index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=<?php echo get_siteid();?>" allowTransparency="true"  width="500" height="24" frameborder="0" scrolling="no"></iframe>')</script></span></div> -->
            
 			
-		<div class="nav-right">
-			<div style="color: #fff;line-height: 42px;margin: 0 15px;">
+		<div class="nav-right" style="overflow: hidden;">
+			<div style="width: 129px; color: #fff;line-height: 42px;margin: 0 15px;">
 				<?php echo date('Y',time($updatetime));?>年<?php echo date('m',time($updatetime));?>月<?php echo date('d',time($updatetime));?>日
 				星期<span id="dateCN"><?php echo date('N',time($updatetime));?></span>
 			</div>
-			<div style="color: #fff;line-height: 42px;margin: 0 0px;">北京 37℃</div>
+			<div style=" color: #fff;line-height: 42px;margin: 0 0px;">
+				<span id="address" style="display: inline-block"></span>
+				37℃</div>
 			<div class="tab" id="search">
 					<?php $j=0?>
 					<?php $search_model = getcache('search_model_'.$siteid, 'search');?>
@@ -110,7 +78,7 @@ $(function(){
 					<?php $n++;}unset($n); ?>
 					<?php unset($j);?>
 				</div>
-			<div class="bd search">
+			<div class="bd search" style="float: right">
 				<form action="<?php echo APP_PATH;?>index.php" method="get" target="_blank">
 					<input type="hidden" name="m" value="search"/>
 					<input type="hidden" name="c" value="index"/>
@@ -177,8 +145,69 @@ $(function(){
 		case "7": $('#dateCN').html('七'); break;
 	}
 
-	$(function () {
-        
-    })
+	// 获取所在地
+	$(function(){
+		var latlon=null;
+		//ajax获取用户所在经纬度
+		$.ajax({
+			url:"http://api.map.baidu.com/location/ip?ak=SFSupwuY95NMgI7eDE99NqYx7WpNqDKp&coor=bd09ll",
+			type:"POST",
+			dataType:"jsonp",
+			success:function(data){
+				latlon=data.content.point.y+","+data.content.point.x;
+				//ajax根据经纬度获取省市区
+				$.ajax({
+					type: "POST",
+					dataType: "jsonp",
+					url: 'http://api.map.baidu.com/geocoder/v2/?ak=SFSupwuY95NMgI7eDE99NqYx7WpNqDKp&callback=renderReverse&location='+latlon+'&output=json&pois=0',
+					success: function (json) {
+						if(json.status==0){
+							// console.log(json.result.addressComponent.province+"-"+json.result.addressComponent.city+"-"+json.result.addressComponent.district);
+							$('#address').html(json.result.addressComponent.city)
+						}
+					}
+				});
+			},
+			error:function(){
+				$('#address').html('北京市')
+			}
+		});
+	})
+
+	// 设为首页
+	function SetHome(url){
+		if (document.all) {
+			document.body.style.behavior='url(#default#homepage)';
+			document.body.setHomePage(url);
+		}else{
+			alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
+		}
+	}
+	
+	// 加为收藏
+	function addFavorite() {
+		var url = window.location;
+		var title = document.title;
+		var ua = navigator.userAgent.toLowerCase();
+		if (ua.indexOf("360se") > -1) {
+				alert("由于360浏览器功能限制，请按 Ctrl+D 手动收藏！");
+			}
+			else if (ua.indexOf("msie 8") > -1) {
+				window.external.AddToFavoritesBar(url, title); //IE8
+			}
+			else if (document.all) {
+		try{
+			window.external.addFavorite(url, title);
+		}catch(e){
+			alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
+		}
+			}
+			else if (window.sidebar) {
+				window.sidebar.addPanel(title, url, "");
+			}
+			else {
+		alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
+			}
+	}
 		
 </script>
