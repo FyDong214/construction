@@ -75,6 +75,13 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .main .col-left .slide{overflow:hidden;_float:left;zoom:1}
 /* 我添加的myStyle */
 .body-top .content .nav>li{float: left;color: #fff;width: 65px;height: 40px;line-height: 40px;text-align: center;}
+.body-top .content .nav>li>a{cursor: pointer;
+    float: left;
+    color: rgb(255, 255, 255);
+    width: 65px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;}
 .body-top .content .nav-right>div{float: left;}
 .top-news{height: 110px;width: 80%;margin: 0 auto;}
 .top-news .blue_tl {text-align: center;font-size: 38px;font-weight: 600;margin: 10px 0 5px;}

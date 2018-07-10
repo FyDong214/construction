@@ -12,6 +12,41 @@
 <script type="text/javascript" src="<?php echo JS_PATH;?>jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo JS_PATH;?>jquery.sgallery.js"></script>
 <script type="text/javascript" src="<?php echo JS_PATH;?>search_common.js"></script>
+<script>
+	function SetHome(url){
+		if (document.all) {
+			document.body.style.behavior='url(#default#homepage)';
+			document.body.setHomePage(url);
+		}else{
+			alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
+		}
+	}
+	
+function addFavorite() {
+	var url = window.location;
+	var title = document.title;
+	var ua = navigator.userAgent.toLowerCase();
+	if (ua.indexOf("360se") > -1) {
+			alert("由于360浏览器功能限制，请按 Ctrl+D 手动收藏！");
+		}
+		else if (ua.indexOf("msie 8") > -1) {
+			window.external.AddToFavoritesBar(url, title); //IE8
+		}
+		else if (document.all) {
+	try{
+		window.external.addFavorite(url, title);
+	}catch(e){
+		alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
+	}
+		}
+		else if (window.sidebar) {
+			window.sidebar.addPanel(title, url, "");
+		}
+		else {
+	alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
+		}
+	}
+</script>
 <?PHP
 if($child){
    $child_arrary=explode(',',$arrchildid);
@@ -24,8 +59,12 @@ if($child){
 <div class="body-top">
     <div class="content">
 		<ul class="nav">
-			<li>设为首页</li>
-			<li>加为收藏</li>
+			<li>
+				<a onclick="SetHome(window.location)" style="cursor:pointer">设为首页</a>
+			</li>
+			<li  style="cursor:pointer">
+				<a href=# rel="sidebar" onclick="javascript:addFavorite()">加入收藏</a>
+			</li>
 			<li>手机版</li>
 			<li>桌面下载</li>
 			<li>论坛登录</li>
@@ -137,5 +176,9 @@ $(function(){
 		case "6": $('#dateCN').html('六'); break;
 		case "7": $('#dateCN').html('七'); break;
 	}
+
+	$(function () {
+        
+    })
 		
 </script>
