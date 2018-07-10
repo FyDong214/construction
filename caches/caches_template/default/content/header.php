@@ -62,8 +62,8 @@ if($child){
 			<li>
 				<a onclick="SetHome(window.location)" style="cursor:pointer">设为首页</a>
 			</li>
-			<li  style="cursor:pointer">
-				<a href=# rel="sidebar" onclick="javascript:addFavorite()">加入收藏</a>
+			<li>
+				<a href=# rel="sidebar" onclick="javascript:addFavorite()"  style="cursor:pointer">加入收藏</a>
 			</li>
 			<li>手机版</li>
 			<li>桌面下载</li>
