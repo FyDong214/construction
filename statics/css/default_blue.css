@@ -64,6 +64,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .header .nav-site li{float:left; height:33px; line-height:33px; padding:0 18px; }
 .header .nav-site li a{color:#fff; font-size:14px; font-weight:700;*display:block}
 .header .nav-site li.line{background-position: 2px -215px; padding:0; width:10px; text-indent:-10000px}
+.header .nav-site li.line.con-line{background: none;width: 10px;padding: 0px;text-indent: 0px;color: #fff;font-size: 14px;}
 .header .subnav{ padding-left:16px; border-left:1px solid #d2dfed;border-right:1px solid #d2dfed;background-position: left -33px;background-repeat: repeat-x; height:32px; line-height:32px}
 .header .subnav a{ color:#004499}
 .header .subnav span{ padding:0 3px; color:#c8d8e9;}
