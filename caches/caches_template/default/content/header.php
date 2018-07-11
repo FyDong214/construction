@@ -68,7 +68,8 @@ $(function(){
 			</div>
 			<div style=" color: #fff;line-height: 42px;margin: 0 0px;">
 				<span id="address" style="display: inline-block"></span>
-				37℃</div>
+				<span id="wendu" style="display: inline-block"></span>℃
+			</div>
 			<div class="tab" id="search">
 					<?php $j=0?>
 					<?php $search_model = getcache('search_model_'.$siteid, 'search');?>
@@ -134,6 +135,7 @@ $(function(){
 </div>
 </div>
 <script type="text/javascript">
+
 	var date = $('#dateCN').html();
 	switch (date) {
 		case "1": $('#dateCN').html('一'); break;
@@ -147,7 +149,9 @@ $(function(){
 
 	// 获取所在地
 	$(function(){
+
 		var latlon=null;
+		var city;
 		//ajax获取用户所在经纬度
 		$.ajax({
 			url:"http://api.map.baidu.com/location/ip?ak=SFSupwuY95NMgI7eDE99NqYx7WpNqDKp&coor=bd09ll",
@@ -164,6 +168,19 @@ $(function(){
 						if(json.status==0){
 							// console.log(json.result.addressComponent.province+"-"+json.result.addressComponent.city+"-"+json.result.addressComponent.district);
 							$('#address').html(json.result.addressComponent.city)
+							city = json.result.addressComponent.city
+							$.ajax({
+								type: "get",
+								url:"http://wthrcdn.etouch.cn/weather_mini?city="+city,
+								async: true,
+								dataType:"jsonp",
+								jsonp: "callback",
+								jsonpCallback: "handler1",
+								success:function(data){
+									// console.log(data.data.wendu)
+									$('#wendu').html(data.data.wendu);
+								}
+							})
 						}
 					}
 				});
@@ -172,7 +189,10 @@ $(function(){
 				$('#address').html('北京市')
 			}
 		});
+
+
 	})
+	
 
 	// 设为首页
 	function SetHome(url){
