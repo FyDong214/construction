@@ -259,7 +259,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .box.cat-area.con h5.title-1{color:rgb(29, 113, 183) }
 .cat-area.con .content p {width: 315px;height: 180px;position: relative; margin-bottom: 10px;}
 .cat-area.con .content p img{width: 315px;height: 180px; margin-right: 0;}
-.cat-area.con .content p strong{position: absolute; bottom: 0;background: rgba(0,0,0,0.3);font-weight: normal;width: 100%;text-align: center;height: 28px;line-height: 28px;color: #fff;}
+.cat-area.con .content p strong{position: absolute; bottom: 0;background: rgba(29,113,183,0.4);font-weight: normal;width: 100%;text-align: center;height: 28px;line-height: 28px;color: #fff;}
 .cat-area.con .content p strong>a{font-weight: normal;width: 100%;text-align: center;height: 28px;line-height: 28px;color: #fff;}
 /* Blogroll */
 .blogroll {}
