@@ -3,27 +3,32 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>PHPCMS演示站</title>
-<meta name="keywords" content="PHPCMS演示站">
-<meta name="description" content="PHPCMS演示站">
+<title>中国建设</title>
+<meta name="keywords" content="中国建设">
+<meta name="description" content="中国建设">
 <link href="http://localhost/construction/statics/css/reset.css" rel="stylesheet" type="text/css" />
 <link href="http://localhost/construction/statics/css/default_blue.css" rel="stylesheet" type="text/css" />
 <link href="http://localhost/construction/statics/css/iconfont.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="http://localhost/construction/statics/js/jquery.min.js"></script>
 <script type="text/javascript" src="http://localhost/construction/statics/js/jquery.sgallery.js"></script>
 <script type="text/javascript" src="http://localhost/construction/statics/js/search_common.js"></script>
+
 </head>
 <body>
 <div class="body-top">
     <div class="content">
 		<ul class="nav">
-			<li>设为首页</li>
-			<li>加为收藏</li>
+			<li>
+				<a onclick="SetHome(window.location)" style="cursor:pointer">设为首页</a>
+			</li>
+			<li>
+				<a href=# rel="sidebar" onclick="javascript:addFavorite()"  style="cursor:pointer">加入收藏</a>
+			</li>
 			<li>手机版</li>
 			<li>桌面下载</li>
 			<li>论坛登录</li>
 			<li>站点导航</li>
-			<li class="login" style="margin-left: 140px;">
+			<li class="login" style="margin-left: 100px;">
 				<div class="login lh24 blue">
 					<span class="rt">
 						<script type="text/javascript">document.write('<iframe src="http://localhost/construction/index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=1" allowTransparency="true"  width="500" height="40" frameborder="0" scrolling="no"></iframe>')</script>
@@ -43,19 +48,22 @@ $(function(){
 			<!-- <div class="login lh24 blue"><a href="http://localhost/construction/index.php?m=content&c=rss&siteid=1" class="rss ib">rss</a><span class="rt"><script type="text/javascript">document.write('<iframe src="http://localhost/construction/index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=1" allowTransparency="true"  width="500" height="24" frameborder="0" scrolling="no"></iframe>')</script></span></div> -->
            
 			
-		<div class="nav-right">
-			<div style="color: #fff;line-height: 42px;margin: 0 15px;">
-				2018年07月06日
-				星期<span id="dateCN">5</span>
+		<div class="nav-right" style="overflow: hidden;">
+			<div style="width: 129px; color: #fff;line-height: 42px;margin: 0 15px;">
+				2018年07月16日
+				星期<span id="dateCN">1</span>
 			</div>
-			<div style="color: #fff;line-height: 42px;margin: 0 0px;">北京 37℃</div>
+			<div style=" color: #fff;line-height: 42px;margin: 0 0px;">
+				<span id="address" style="display: inline-block"></span>
+				<span id="wendu" style="display: inline-block"></span>℃
+			</div>
 			<div class="tab" id="search">
 																										<!-- <a href="javascript:;" onclick="setmodel(1, $(this));" style="outline:medium none;" hidefocus="true"  class="on" >新闻</a><span> | </span> -->
 																<!-- <a href="javascript:;" onclick="setmodel(3, $(this));" style="outline:medium none;" hidefocus="true" >图片</a><span> | </span> -->
 																<!-- <a href="javascript:;" onclick="setmodel(2, $(this));" style="outline:medium none;" hidefocus="true" >下载</a><span> | </span> -->
 																<!-- <a href="javascript:;" onclick="setmodel(52, $(this));" style="outline:medium none;" hidefocus="true" >专题</a> -->
 														</div>
-			<div class="bd search">
+			<div class="bd search" style="float: right">
 				<form action="http://localhost/construction/index.php" method="get" target="_blank">
 					<input type="hidden" name="m" value="search"/>
 					<input type="hidden" name="c" value="index"/>
@@ -86,21 +94,21 @@ $(function(){
     	<map>
     	        	<ul class="nav-site">
 			<li><a href="http://localhost/construction"><span>首页</span></a></li>
-						<li class="line">|</li>
+						<li class="line con-line">|</li>
 			<li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=10"><span>行业资讯</span></a></li>
-						<li class="line">|</li>
+						<li class="line con-line">|</li>
 			<li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=11"><span>质量安全</span></a></li>
-						<li class="line">|</li>
+						<li class="line con-line">|</li>
 			<li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=12"><span>建筑建材</span></a></li>
-						<li class="line">|</li>
+						<li class="line con-line">|</li>
 			<li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=13"><span>企业党工团</span></a></li>
-						<li class="line">|</li>
+						<li class="line con-line">|</li>
 			<li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=14"><span>精准扶贫</span></a></li>
-						<li class="line">|</li>
+						<li class="line con-line">|</li>
 			<li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=15"><span>一带一路</span></a></li>
-						<li class="line">|</li>
+						<li class="line con-line">|</li>
 			<li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=16"><span>特色小镇</span></a></li>
-						<li class="line">|</li>
+						<li class="line con-line">|</li>
 			<li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=17"><span>北大文旅</span></a></li>
 			            </ul>
         		        </map>
@@ -109,6 +117,7 @@ $(function(){
 	</div>
 </div>
 <script type="text/javascript">
+
 	var date = $('#dateCN').html();
 	switch (date) {
 		case "1": $('#dateCN').html('一'); break;
@@ -118,6 +127,89 @@ $(function(){
 		case "5": $('#dateCN').html('五'); break;
 		case "6": $('#dateCN').html('六'); break;
 		case "7": $('#dateCN').html('七'); break;
+	}
+
+	// 获取所在地
+	$(function(){
+
+		var latlon=null;
+		var city;
+		//ajax获取用户所在经纬度
+		$.ajax({
+			url:"http://api.map.baidu.com/location/ip?ak=SFSupwuY95NMgI7eDE99NqYx7WpNqDKp&coor=bd09ll",
+			type:"POST",
+			dataType:"jsonp",
+			success:function(data){
+				latlon=data.content.point.y+","+data.content.point.x;
+				//ajax根据经纬度获取省市区
+				$.ajax({
+					type: "POST",
+					dataType: "jsonp",
+					url: 'http://api.map.baidu.com/geocoder/v2/?ak=SFSupwuY95NMgI7eDE99NqYx7WpNqDKp&callback=renderReverse&location='+latlon+'&output=json&pois=0',
+					success: function (json) {
+						if(json.status==0){
+							// console.log(json.result.addressComponent.province+"-"+json.result.addressComponent.city+"-"+json.result.addressComponent.district);
+							$('#address').html(json.result.addressComponent.city)
+							city = json.result.addressComponent.city
+							$.ajax({
+								type: "get",
+								url:"http://wthrcdn.etouch.cn/weather_mini?city="+city,
+								async: true,
+								dataType:"jsonp",
+								jsonp: "callback",
+								jsonpCallback: "handler1",
+								success:function(data){
+									// console.log(data.data.wendu)
+									$('#wendu').html(data.data.wendu);
+								}
+							})
+						}
+					}
+				});
+			},
+			error:function(){
+				$('#address').html('北京市')
+			}
+		});
+
+
+	})
+	
+
+	// 设为首页
+	function SetHome(url){
+		if (document.all) {
+			document.body.style.behavior='url(#default#homepage)';
+			document.body.setHomePage(url);
+		}else{
+			alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
+		}
+	}
+	
+	// 加为收藏
+	function addFavorite() {
+		var url = window.location;
+		var title = document.title;
+		var ua = navigator.userAgent.toLowerCase();
+		if (ua.indexOf("360se") > -1) {
+				alert("由于360浏览器功能限制，请按 Ctrl+D 手动收藏！");
+			}
+			else if (ua.indexOf("msie 8") > -1) {
+				window.external.AddToFavoritesBar(url, title); //IE8
+			}
+			else if (document.all) {
+		try{
+			window.external.addFavorite(url, title);
+		}catch(e){
+			alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
+		}
+			}
+			else if (window.sidebar) {
+				window.sidebar.addPanel(title, url, "");
+			}
+			else {
+		alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
+			}
 	}
 		
 </script><!--main-->
@@ -199,7 +291,7 @@ $(function(){
             </div> -->
         </div>
         <div class="bk10"></div>
-        <div style="width: 690px;border: 1px solid #cf0101"></div>
+        <div style="width: 640px;border: 1px solid #cf0101"></div>
         <!-- <div class="box">
         		<h5>图片新闻</h5>
                       <ul class="content news-photo picbig">
@@ -347,7 +439,7 @@ $(function(){
             <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=19">政策解读</a></li>
         </ul>
                <ul>
-            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=20">建筑建材子栏目2</a></li>
+            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=20">子栏目2</a></li>
         </ul>
                <ul>
             <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=21">政策解读</a></li>
@@ -368,10 +460,10 @@ $(function(){
             <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=26">子栏目3</a></li>
         </ul>
                <ul>
-            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=27">党工团1</a></li>
+            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=27">子栏目1</a></li>
         </ul>
                <ul>
-            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=28">党工团2</a></li>
+            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=28">子栏目2</a></li>
         </ul>
                <ul>
             <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=29">一带一路1</a></li>
@@ -391,288 +483,316 @@ $(function(){
                <ul>
             <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=34">北大文旅2</a></li>
         </ul>
+               <ul>
+            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=35">子栏目3</a></li>
+        </ul>
+               <ul>
+            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=36">子栏目3</a></li>
+        </ul>
+               <ul>
+            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=37">一带一路3</a></li>
+        </ul>
+               <ul>
+            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=38">特色小镇3</a></li>
+        </ul>
+               <ul>
+            <li><a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=39">北大文旅3</a></li>
+        </ul>
         -->
        
        
         <div class="bk10"></div>
-                                                                                                                <div class="box cat-area con" id="cate_2" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
 
-                <h5 class="title-1">
-                    <a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=12">建筑建材</a>
-                </h5>
-                                                <div class="cate-div">
-                    <span class="cate">政策解读                        <i>+</i>
-                    </span>
-                    
-                                                            <ul class="cate-children">
-                                                <li>政策解读</li>
-                                                <li>建筑建材子栏目2</li>
-                                            </ul>
-                </div>
+        <!-- 建筑建材 -->
+        <div class="box cat-area con" id="cate_2" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+         
+         
+            <h5 class="title-1">
+                <a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=12">建筑建材</a>
+            </h5>
 
-             <div class="content">
+             
+                        <div class="cate-div" style="cursor: pointer;">
+                <span class="cate" id="jzjc_title">政策解读                    <i>+</i>
+                </span>
                  
-
-                <div class="inner">
+                <ul class="cate-children" id="jzjc_zlm">
+                                        <li>政策解读</li>
+                                        <li>子栏目2</li>
+                                        <li>子栏目3</li>
+                                    </ul>
+            </div>
+            
+            <div id="jzjc_children">
+                <!-- 子栏目1 -->
+                <div class="content">
                                                             <p>
                         <img src="http://localhost/construction/uploadfile/2018/0703/thumb_90_0_20180703045140932.jpg" width="315" height="180"/>
                         <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解...</a></strong>
                     </p>
-                                                  
-    
+                    
                                         <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解读政策解读政策解读读政...</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=60" target="_blank" title="政策解读10">政策解读10</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=59" target="_blank" title="政策解读9">政策解读9</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=58" target="_blank" title="政策解读8">政策解读8</a></li>
-                                        </ul>
-                                    </div>
-            </div>
-            <div class="content">
+                                                <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解读政策解读政策解读读政...</a></li>
+                                                <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=60" target="_blank" title="政策解读10">政策解读10</a></li>
+                                                <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=59" target="_blank" title="政策解读9">政策解读9</a></li>
+                                                <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=58" target="_blank" title="政策解读8">政策解读8</a></li>
+                                            </ul>
+                </div>
+                <!-- 子栏目2 -->
+                <div class="content" style="display: none;">
                                                             <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0706/thumb_90_0_20180706044035435.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天...</a></strong>
+                        <img src="http://localhost/construction/uploadfile/2018/0702/thumb_90_0_20180702104443753.jpg" width="315" height="180"/>
+                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=20&id=48" target="_blank" title="建筑建材子栏目222">建筑建材子栏目222</a></strong>
                     </p>
-                                                  
-
+                    
                                         <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天的三种方式</a></li>
-                                        </ul>
-                                    </div>
-           
-        </div>
-		<!--                         <div class="box cat-area con" id="cate_2" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+                                                <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=20&id=49" target="_blank" title="建筑建材子栏目222222">建筑建材子栏目222222</a></li>
+                                                <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=20&id=48" target="_blank" title="建筑建材子栏目222">建筑建材子栏目222</a></li>
+                                            </ul>
+                </div>
+                <!-- 子栏目3 -->
+                <div class="content" style="display: none;">
+                                        
+                                        <ul class="list lh24 f14">
+                                            </ul>
+                </div>
+            </div>
+         
+                </div> 
 
+        <!-- 企业党工团 -->
+        <div class="box cat-area con" id="cate_3" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+             
+             
                 <h5 class="title-1">
                     <a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=13">企业党工团</a>
                 </h5>
-                                                <div class="cate-div">
-                    <span class="cate">党工团1                        <i>+</i>
+    
+                 
+                                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="qydgt_title">子栏目1                        <i>+</i>
                     </span>
-                    
-                                                            <ul class="cate-children">
-                                                <li>党工团1</li>
-                                                <li>党工团2</li>
+                     
+                    <ul class="cate-children" id="qydgt_zlm">
+                                                <li>子栏目1</li>
+                                                <li>子栏目2</li>
+                                                <li>子栏目3</li>
                                             </ul>
                 </div>
+                    
+                <div id="qydgt_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                                                                        <p>
+                            <img src="http://localhost/construction/uploadfile/2018/0706/thumb_90_0_20180706044035435.jpg" width="315" height="180"/>
+                            <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天...</a></strong>
+                        </p>
+                            
+                                                <ul class="list lh24 f14">
+                                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天的三种方式</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                                                                        <p>
+                            <img src="http://localhost/construction/uploadfile/2018/0706/thumb_90_0_20180706044115899.jpg" width="315" height="180"/>
+                            <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=28&id=78" target="_blank" title="道油焖笋">道油焖笋</a></strong>
+                        </p>
+                            
+                                                <ul class="list lh24 f14">
+                                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=28&id=78" target="_blank" title="道油焖笋">道油焖笋</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                </div>
+             
+                    </div>
 
-             <div class="content">
-                 
-
-                <div class="inner">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0703/thumb_90_0_20180703045140932.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解...</a></strong>
-                    </p>
-                                                  
-    
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解读政策解读政策解读读政...</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=60" target="_blank" title="政策解读10">政策解读10</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=59" target="_blank" title="政策解读9">政策解读9</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=58" target="_blank" title="政策解读8">政策解读8</a></li>
-                                        </ul>
-                                    </div>
-            </div>
-            <div class="content">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0706/thumb_90_0_20180706044035435.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天...</a></strong>
-                    </p>
-                                                  
-
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天的三种方式</a></li>
-                                        </ul>
-                                    </div>
-           
-        </div>
-		<!--                         <div class="box cat-area con" id="cate_2" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
-
+        <!-- 精准扶贫 -->
+        <div class="box cat-area con" id="cate_4" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+             
+             
                 <h5 class="title-1">
                     <a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=14">精准扶贫</a>
                 </h5>
-                                                <div class="cate-div">
-                    <span class="cate">政策解读                        <i>+</i>
+    
+                 
+                                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="jzfp_title">政策解读                        <i>+</i>
                     </span>
-                    
-                                                            <ul class="cate-children">
+                     
+                    <ul class="cate-children" id="jzfp_zlm">
                                                 <li>政策解读</li>
                                                 <li>脱贫故事</li>
                                                 <li>致富项目</li>
                                             </ul>
                 </div>
+                    
+                <div id="jzfp_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                                                                        <p>
+                            <img src="http://localhost/construction/uploadfile/2018/0704/thumb_90_0_20180704032220102.jpg" width="315" height="180"/>
+                            <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=21&id=67" target="_blank" title="游记丨你吃过和没吃过的武汉">游记丨你吃过和...</a></strong>
+                        </p>
+                            
+                                                <ul class="list lh24 f14">
+                                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=21&id=72" target="_blank" title="重庆九宫格火锅 激情四射">重庆九宫格火锅 激情四射</a></li>
+                                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=21&id=71" target="_blank" title="韩国首尔广藏市场很有料">韩国首尔广藏市场很有料</a></li>
+                                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=21&id=70" target="_blank" title="世界第一早餐bills，真的有那么好吃吗">世界第一早餐bills，真的有那么好吃吗</a></li>
+                                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=21&id=69" target="_blank" title="春天的味道">春天的味道</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                </div>
+             
+                    </div>
 
-             <div class="content">
-                 
-
-                <div class="inner">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0703/thumb_90_0_20180703045140932.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解...</a></strong>
-                    </p>
-                                                  
-    
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解读政策解读政策解读读政...</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=60" target="_blank" title="政策解读10">政策解读10</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=59" target="_blank" title="政策解读9">政策解读9</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=58" target="_blank" title="政策解读8">政策解读8</a></li>
-                                        </ul>
-                                    </div>
-            </div>
-            <div class="content">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0706/thumb_90_0_20180706044035435.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天...</a></strong>
-                    </p>
-                                                  
-
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天的三种方式</a></li>
-                                        </ul>
-                                    </div>
-           
-        </div>
-		<!--                         <div class="box cat-area con" id="cate_2" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
-
+        <!-- 一带一路 -->
+        <div class="box cat-area con" id="cate_5" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+             
+             
                 <h5 class="title-1">
                     <a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=15">一带一路</a>
                 </h5>
-                                                <div class="cate-div">
-                    <span class="cate">一带一路1                        <i>+</i>
+    
+                 
+                                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="ydyl_title">一带一路1                        <i>+</i>
                     </span>
-                    
-                                                            <ul class="cate-children">
+                     
+                    <ul class="cate-children" id="ydyl_zlm">
                                                 <li>一带一路1</li>
                                                 <li>一带一路2</li>
+                                                <li>一带一路3</li>
                                             </ul>
                 </div>
+                    
+                <div id="ydyl_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                </div>
+             
+                    </div>
 
-             <div class="content">
-                 
-
-                <div class="inner">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0703/thumb_90_0_20180703045140932.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解...</a></strong>
-                    </p>
-                                                  
-    
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解读政策解读政策解读读政...</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=60" target="_blank" title="政策解读10">政策解读10</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=59" target="_blank" title="政策解读9">政策解读9</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=58" target="_blank" title="政策解读8">政策解读8</a></li>
-                                        </ul>
-                                    </div>
-            </div>
-            <div class="content">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0706/thumb_90_0_20180706044035435.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天...</a></strong>
-                    </p>
-                                                  
-
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天的三种方式</a></li>
-                                        </ul>
-                                    </div>
-           
-        </div>
-		<!--                         <div class="box cat-area con" id="cate_2" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
-
+        <!-- 特色小镇 -->
+        <div class="box cat-area con" id="cate_6" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+             
+             
                 <h5 class="title-1">
                     <a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=16">特色小镇</a>
                 </h5>
-                                                <div class="cate-div">
-                    <span class="cate">特写小镇1                        <i>+</i>
+    
+                 
+                                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="tsxz_title">特写小镇1                        <i>+</i>
                     </span>
-                    
-                                                            <ul class="cate-children">
+                     
+                    <ul class="cate-children" id="tsxz_zlm">
                                                 <li>特写小镇1</li>
                                                 <li>特色小镇2</li>
+                                                <li>特色小镇3</li>
                                             </ul>
                 </div>
+                    
+                <div id="tsxz_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                </div>
+             
+                    </div>
 
-             <div class="content">
-                 
-
-                <div class="inner">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0703/thumb_90_0_20180703045140932.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解...</a></strong>
-                    </p>
-                                                  
-    
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解读政策解读政策解读读政...</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=60" target="_blank" title="政策解读10">政策解读10</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=59" target="_blank" title="政策解读9">政策解读9</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=58" target="_blank" title="政策解读8">政策解读8</a></li>
-                                        </ul>
-                                    </div>
-            </div>
-            <div class="content">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0706/thumb_90_0_20180706044035435.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天...</a></strong>
-                    </p>
-                                                  
-
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天的三种方式</a></li>
-                                        </ul>
-                                    </div>
-           
-        </div>
-		<!--                         <div class="box cat-area con" id="cate_2" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
-
+        <!-- 北大文旅 -->
+        <div class="box cat-area con" id="cate_7" style="margin: 20px 5px 10px 0; border-top: 2px solid #cf0101;overflow: hidden;">
+             
+             
                 <h5 class="title-1">
                     <a href="http://localhost/construction/index.php?m=content&c=index&a=lists&catid=17">北大文旅</a>
                 </h5>
-                                                <div class="cate-div">
-                    <span class="cate">北大文旅1                        <i>+</i>
+    
+                 
+                                <div class="cate-div" style="cursor: pointer;">
+                    <span class="cate" id="bdwl_title">北大文旅1                        <i>+</i>
                     </span>
-                    
-                                                            <ul class="cate-children">
+                     
+                    <ul class="cate-children" id="bdwl_zlm">
                                                 <li>北大文旅1</li>
                                                 <li>北大文旅2</li>
+                                                <li>北大文旅3</li>
                                             </ul>
                 </div>
-
-             <div class="content">
-                 
-
-                <div class="inner">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0703/thumb_90_0_20180703045140932.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解...</a></strong>
-                    </p>
-                                                  
-    
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=61" target="_blank" title="政策解读政策解读政策解读政策解读读政策解读政11">政策解读政策解读政策解读政策解读读政...</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=60" target="_blank" title="政策解读10">政策解读10</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=59" target="_blank" title="政策解读9">政策解读9</a></li>
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=19&id=58" target="_blank" title="政策解读8">政策解读8</a></li>
-                                        </ul>
-                                    </div>
-            </div>
-            <div class="content">
-                                                            <p>
-                        <img src="http://localhost/construction/uploadfile/2018/0706/thumb_90_0_20180706044035435.jpg" width="315" height="180"/>
-                        <strong><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天...</a></strong>
-                    </p>
-                                                  
-
-                                        <ul class="list lh24 f14">
-                                        <li><a href="http://localhost/construction/index.php?m=content&c=index&a=show&catid=27&id=77" target="_blank" title="在杭州吃掉春天的三种方式">在杭州吃掉春天的三种方式</a></li>
-                                        </ul>
-                                    </div>
-           
-        </div>
-		<!--                  -->
+                    
+                <div id="bdwl_children">
+                    <!-- 子栏目1 -->
+                    <div class="content">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目2 -->
+                    <div class="content" style="display: none;">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                    <!-- 子栏目3 -->
+                    <div class="content" style="display: none;">
+                                                    
+                                                <ul class="list lh24 f14">
+                                                    </ul>
+                    </div>
+                </div>
+             
+                    </div>
+       
     </div>
     <!-- <div class="col-auto">
     	<div class="box">
@@ -835,6 +955,9 @@ $(function(){
     $("#cate_1").mouseover(function(){
         $("#children").css("display","block");
     })
+    $("#cate_1").mouseout(function(){
+        $("#children").css("display","none");
+    })
     $("#children").mouseover(function(){
         $("#children").css("display","block");
     })
@@ -846,73 +969,214 @@ $(function(){
 $(function(){
     $("#children>li:first").click(function(){
         $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
-        $("#children>li:first").css("background","#5a9fe2")
-        $("#children>li:nth-child(2)").css("background","none")
-        $("#children>li:nth-child(3)").css("background","none")
+        $("#children>li:first").css({"background":"#1d71b7","color":"#fff"})
+        $("#children>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#children>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
         $("#content_1").css("display","block")
         $("#content_2").css("display","none")
         $("#content_3").css("display","none")
     })
     $("#children>li:nth-child(2)").click(function(){
         $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
-        $("#children>li:nth-child(2)").css("background","#5a9fe2")
-        $("#children>li:first").css("background","none")
-        $("#children>li:nth-child(3)").css("background","none")
+        $("#children>li:nth-child(2)").css({"background":"#1d71b7","color":"#fff"})
+        $("#children>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#children>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
         $("#content_2").css("display","block")
         $("#content_1").css("display","none")
         $("#content_3").css("display","none")
     })
     $("#children>li:nth-child(3)").click(function(){
         $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
-        $("#children>li:nth-child(3)").css("background","#5a9fe2")
-        $("#children>li:nth-child(2)").css("background","none")
-        $("#children>li:first").css("background","none")
+        $("#children>li:nth-child(3)").css({"background":"#1d71b7","color":"#fff"})
+        $("#children>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#children>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
         $("#content_3").css("display","block")
         $("#content_1").css("display","none")
         $("#content_2").css("display","none")
     })
 })
 $(function(){
-    $("#cate_2 .cate-div").mouseover(function(){
+    $(".cate-div").mouseover(function(){
         $(this).children(".cate-children").css("display","block");
     })
-    $("#cate_2 .cate-div").mouseout(function(){
+    $(".cate-div").mouseout(function(){
         $(this).children(".cate-children").css("display","none");
     })
-    $("#cate_2 .cate-children").mouseover(function(){
+    $(".cate-children").mouseover(function(){
         $(this).css("display","block");
     })
-    $("#cate_2 .cate-children").mouseout(function(){
+    $(".cate-children").mouseout(function(){
         $(this).css("display","none");
     })
     $("#cate_2 .cate-children>li:first").click(function(){
-        // $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
-        // $("#children>li:first").css("background","#5a9fe2")
-        // $("#children>li:nth-child(2)").css("background","none")
-        // $("#children>li:nth-child(3)").css("background","none")
-        $("#content_1").css("display","block")
-        $("#content_2").css("display","none")
-        $("#content_3").css("display","none")
+        $("#jzjc_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzjc_zlm>li:first").css({"background":"#1d71b7","color":"#fff"})
+        $("#jzjc_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzjc_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzjc_children>div:first").css("display","block")
+        $("#jzjc_children>div:nth-child(2)").css("display","none")
+        $("#jzjc_children>div:nth-child(3)").css("display","none")
     })
-    // $("#children>li:nth-child(2)").click(function(){
-    //     $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
-    //     $("#children>li:nth-child(2)").css("background","#5a9fe2")
-    //     $("#children>li:first").css("background","none")
-    //     $("#children>li:nth-child(3)").css("background","none")
-    //     $("#content_2").css("display","block")
-    //     $("#content_1").css("display","none")
-    //     $("#content_3").css("display","none")
-    // })
-    // $("#children>li:nth-child(3)").click(function(){
-    //     $("#cate_1").prop ('firstChild').nodeValue = this.innerText + "            ";
-    //     $("#children>li:nth-child(3)").css("background","#5a9fe2")
-    //     $("#children>li:nth-child(2)").css("background","none")
-    //     $("#children>li:first").css("background","none")
-    //     $("#content_3").css("display","block")
-    //     $("#content_1").css("display","none")
-    //     $("#content_2").css("display","none")
-    // })
+    $("#cate_2 .cate-children>li:nth-child(2)").click(function(){
+        $("#jzjc_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzjc_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzjc_zlm>li:nth-child(2)").css({"background":"#1d71b7","color":"#fff"})
+        $("#jzjc_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzjc_children>div:first").css("display","none")
+        $("#jzjc_children>div:nth-child(2)").css("display","block")
+        $("#jzjc_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_2 .cate-children>li:nth-child(3)").click(function(){
+        $("#jzjc_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzjc_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzjc_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzjc_zlm>li:nth-child(3)").css({"background":"#1d71b7","color":"#fff"})
+        $("#jzjc_children>div:first").css("display","none")
+        $("#jzjc_children>div:nth-child(2)").css("display","none")
+        $("#jzjc_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_3 .cate-children>li:first").click(function(){
+        $("#qydgt_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#qydgt_zlm>li:first").css({"background":"#1d71b7","color":"#fff"})
+        $("#qydgt_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#qydgt_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#qydgt_children>div:first").css("display","block")
+        $("#qydgt_children>div:nth-child(2)").css("display","none")
+        $("#qydgt_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_3 .cate-children>li:nth-child(2)").click(function(){
+        $("#qydgt_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#qydgt_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#qydgt_zlm>li:nth-child(2)").css({"background":"#1d71b7","color":"#fff"})
+        $("#qydgt_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#qydgt_children>div:first").css("display","none")
+        $("#qydgt_children>div:nth-child(2)").css("display","block")
+        $("#qydgt_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_3 .cate-children>li:nth-child(3)").click(function(){
+        $("#qydgt_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#qydgt_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#qydgt_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#qydgt_zlm>li:nth-child(3)").css({"background":"#1d71b7","color":"#fff"})
+        $("#qydgt_children>div:first").css("display","none")
+        $("#qydgt_children>div:nth-child(2)").css("display","none")
+        $("#qydgt_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_4 .cate-children>li:first").click(function(){
+        $("#jzfp_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzfp_zlm>li:first").css({"background":"#1d71b7","color":"#fff"})
+        $("#jzfp_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzfp_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzfp_children>div:first").css("display","block")
+        $("#jzfp_children>div:nth-child(2)").css("display","none")
+        $("#jzfp_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_4 .cate-children>li:nth-child(2)").click(function(){
+        $("#jzfp_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzfp_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzfp_zlm>li:nth-child(2)").css({"background":"#1d71b7","color":"#fff"})
+        $("#jzfp_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzfp_children>div:first").css("display","none")
+        $("#jzfp_children>div:nth-child(2)").css("display","block")
+        $("#jzfp_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_4 .cate-children>li:nth-child(3)").click(function(){
+        $("#jzfp_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#jzfp_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzfp_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#jzfp_zlm>li:nth-child(3)").css({"background":"#1d71b7","color":"#fff"})
+        $("#jzfp_children>div:first").css("display","none")
+        $("#jzfp_children>div:nth-child(2)").css("display","none")
+        $("#jzfp_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_5 .cate-children>li:first").click(function(){
+        $("#ydyl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#ydyl_zlm>li:first").css({"background":"#1d71b7","color":"#fff"})
+        $("#ydyl_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#ydyl_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#ydyl_children>div:first").css("display","block")
+        $("#ydyl_children>div:nth-child(2)").css("display","none")
+        $("#ydyl_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_5 .cate-children>li:nth-child(2)").click(function(){
+        $("#ydyl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#ydyl_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#ydyl_zlm>li:nth-child(2)").css({"background":"#1d71b7","color":"#fff"})
+        $("#ydyl_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#ydyl_children>div:first").css("display","none")
+        $("#ydyl_children>div:nth-child(2)").css("display","block")
+        $("#ydyl_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_5 .cate-children>li:nth-child(3)").click(function(){
+        $("#ydyl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#ydyl_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#ydyl_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#ydyl_zlm>li:nth-child(3)").css({"background":"#1d71b7","color":"#fff"})
+        $("#ydyl_children>div:first").css("display","none")
+        $("#ydyl_children>div:nth-child(2)").css("display","none")
+        $("#ydyl_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_6 .cate-children>li:first").click(function(){
+        $("#tsxz_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#tsxz_zlm>li:first").css({"background":"#1d71b7","color":"#fff"})
+        $("#tsxz_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#tsxz_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#tsxz_children>div:first").css("display","block")
+        $("#tsxz_children>div:nth-child(2)").css("display","none")
+        $("#tsxz_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_6 .cate-children>li:nth-child(2)").click(function(){
+        $("#tsxz_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#tsxz_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#tsxz_zlm>li:nth-child(2)").css({"background":"#1d71b7","color":"#fff"})
+        $("#tsxz_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#tsxz_children>div:first").css("display","none")
+        $("#tsxz_children>div:nth-child(2)").css("display","block")
+        $("#tsxz_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_6 .cate-children>li:nth-child(3)").click(function(){
+        $("#tsxz_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#tsxz_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#tsxz_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#tsxz_zlm>li:nth-child(3)").css({"background":"#1d71b7","color":"#fff"})
+        $("#tsxz_children>div:first").css("display","none")
+        $("#tsxz_children>div:nth-child(2)").css("display","none")
+        $("#tsxz_children>div:nth-child(3)").css("display","block")
+    })
+
+    $("#cate_7 .cate-children>li:first").click(function(){
+        $("#bdwl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#bdwl_zlm>li:first").css({"background":"#1d71b7","color":"#fff"})
+        $("#bdwl_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#bdwl_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#bdwl_children>div:first").css("display","block")
+        $("#bdwl_children>div:nth-child(2)").css("display","none")
+        $("#bdwl_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_7 .cate-children>li:nth-child(2)").click(function(){
+        $("#bdwl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#bdwl_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#bdwl_zlm>li:nth-child(2)").css({"background":"#1d71b7","color":"#fff"})
+        $("#bdwl_zlm>li:nth-child(3)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#bdwl_children>div:first").css("display","none")
+        $("#bdwl_children>div:nth-child(2)").css("display","block")
+        $("#bdwl_children>div:nth-child(3)").css("display","none")
+    })
+    $("#cate_7 .cate-children>li:nth-child(3)").click(function(){
+        $("#bdwl_title").prop ('firstChild').nodeValue = this.innerText + "            ";
+        $("#bdwl_zlm>li:first").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#bdwl_zlm>li:nth-child(2)").css({"background":"none","color":"rgba(0,0,0,0.6)"})
+        $("#bdwl_zlm>li:nth-child(3)").css({"background":"#1d71b7","color":"#fff"})
+        $("#bdwl_children>div:first").css("display","none")
+        $("#bdwl_children>div:nth-child(2)").css("display","none")
+        $("#bdwl_children>div:nth-child(3)").css("display","block")
+    })
 })
+
 </script>
 <div class="footer">
 	

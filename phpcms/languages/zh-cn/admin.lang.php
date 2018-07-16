@@ -6,9 +6,9 @@ translation save at the array:$LANG
 */
 
 //index
-$LANG['admin_site_title'] = 'PHPCMS - 后台管理中心';
+$LANG['admin_site_title'] = '中国建设 - 后台管理中心';
 $LANG['expand_or_contract'] = '展开与收缩';
-$LANG['phpcms_title'] = 'PHPCMS内容管理系统';
+$LANG['phpcms_title'] = '中国建设内容管理系统';
 $LANG['official_site'] = '官方网站';
 $LANG['authorization'] = '授权';
 $LANG['igenus_for_postfix'] = '支持论坛';
@@ -50,7 +50,7 @@ $LANG['main_safety_log'] = '※ 您的错误日志记录超过警戒设置（{si
 $LANG['main_safety_tpledit'] = '※ 您的模版允许后台在线编辑，为避免安全问题，建议您设为不允许在线修改';
 $LANG['main_shortcut'] = '快捷方式';
 $LANG['main_sysinfo'] = '系统信息';
-$LANG['main_version'] = 'PHPCMS程序版本：';
+$LANG['main_version'] = '中国建设程序版本：';
 $LANG['main_latest_version'] = '查看最新版本';
 $LANG['main_os'] = '操作系统：';
 $LANG['main_web_server'] = '服务器软件：';
@@ -668,7 +668,7 @@ $LANG['default_style'] = '默认风格';
 
 $LANG['your_server_it_may_not_have_access_to'] = '您的服务器，可能无法访问到';
 $LANG['_please_check_the_server_configuration'] = '，请检查服务器配置。';
-$LANG['phpcms_logon'] = 'phpcms 登录';
+$LANG['phpcms_logon'] = '中国建设 登录';
 $LANG['please_input_your_password_the_picture_corresponding_location_6_digits'] = '请输入口令卡中图片对应位置的6位数字';
 $LANG['ht_card'] = '口令卡';
 $LANG['apply_for_a_password_card'] = '申请口令卡';
