@@ -76,7 +76,7 @@
                 <?php if($r['catid']==6 || $r['catid']==8 || $r['catid']==10 || $r['catid']==12 || $r['catid']==13 || $r['catid']==14 || $r['catid']==15 || $r['catid']==16 || $r['catid']==17 || $r['catid']==18) continue;?>
                 <!-- 视频新闻 -->
                 <?php if($r['catid']==9) { ?>
-                <div class="box cat-area" <?php if($num%2!=0) { ?>style=" margin: 20px 20px 0 0"<?php } ?>>
+                <div class="box cat-area spetwo" <?php if($num%2!=0) { ?>style=" margin: 20px 20px 0 0"<?php } ?>>
                     <h5 class="title-1">
                         <a href="<?php echo $r['url'];?>"><?php echo $r['catname'];?></a>
                         <!-- <a href="<?php echo $r['url'];?>" class="more">更多>></a> -->
@@ -109,7 +109,7 @@
 
                 <!-- 质量安全 -->
                 <?php if($r['catid']==11 ) { ?>
-                <div class="box cat-area" <?php if($num%2!=0) { ?>style=" margin: 20px 20px 0 0; position: relative;"<?php } ?>>
+                <div class="box cat-area spetwo" <?php if($num%2!=0) { ?>style=" margin: 20px 20px 0 0; position: relative;"<?php } ?>>
                         <h5 class="title-1">
                             <a href="<?php echo $r['url'];?>"><?php echo $r['catname'];?></a>
                             <!-- <a href="<?php echo $r['url'];?>" class="more">更多>></a> -->
