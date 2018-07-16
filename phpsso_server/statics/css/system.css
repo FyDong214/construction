@@ -26,7 +26,7 @@ border-color:#40B3FF; float:left
 /*头部*/
 .header .nav li.tab_web a span,.crumbs,.tab-web-panel li a{background: url(../images/icon_use.png) no-repeat}
 .header {background:#3a6ea5 url(../images/h_bg.gif) repeat-x left bottom; height:80px}
-.header .logo{float:left;width:176px;height:80px;margin-right:10px;_margin-right:7px;background: url(../images/logo_1.gif) no-repeat;}
+.header .logo{float:left;width:176px;height:80px;margin-right:10px;_margin-right:7px;background: url(../images/con_logo.png) no-repeat;}
 .header .rt{float:right;width:230px}
 .header .col-auto{height:80px}
 .header .log{padding:16px 0 0 6px; height:20px}
