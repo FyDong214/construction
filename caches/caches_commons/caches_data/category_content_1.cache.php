@@ -224,7 +224,7 @@ return array (
     'description' => '',
     'parentdir' => 'about/',
     'catdir' => 'hr',
-    'url' => 'http://localhost/construction/index.php?m=content&c=index&a=lists&catid=5',
+    'url' => 'http://123.59.60.193/person/',
     'items' => '0',
     'hits' => '0',
     'setting' => '{"ishtml":"0","template_list":"default","page_template":"page","meta_title":"","meta_keywords":"","meta_description":"","category_ruleid":"6","show_ruleid":"","repeatchargedays":"1"}',
