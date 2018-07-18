@@ -14,7 +14,8 @@
             <p class="title"><a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></p>
             <p class="dec">{str_cut($r['description'],408)}</p>
         </div>
-        <div class="foot">发表于：{date('Y-m-d H:i:s',$r[inputtime])}</div>
+        <!-- <div class="foot">发表于：{date('Y-m-d H:i:s',$r[inputtime])}</div> -->
+        <div class="foot">发表于：{date('Y-m-d',$r[inputtime])}</div>
     </li>
 	<li class="bk20 hr" style="height: 3px;margin-bottom: 20px;"></li>
 {/loop}

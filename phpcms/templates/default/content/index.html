@@ -4,7 +4,7 @@
     <div class="top-news">
         {pc:content  action="lists" catid="18" order="id DESC" num="4"}
         {loop $data $r}
-        <h4 class="blue_{if $n==1}t{else}l{/if}{if $n==2}t{else}l{/if}"><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],36,'')}</a></h4>
+        <h4 class="blue_{if $n==1}t{else}l{/if}{if $n==2}t{else}l{/if}"><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></h4>
         <!-- <p>{if $n==1}<img src="{thumb($r[thumb],90,60)}" width="90" height="60"/>{/if}{str_cut($r[description],112)}</p> -->
         <!-- <div class="bk20 hr"><hr /></div> -->
         {/loop}  

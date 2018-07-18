@@ -83,10 +83,10 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
     line-height: 40px;
     text-align: center;}
 .body-top .content .nav-right>div{float: left;}
-.top-news{height: 110px;width: 80%;margin: 0 auto;}
+.top-news{width: 90%;margin: 0 auto 20px;text-align: center;}
 .top-news .blue_tl {text-align: center;font-size: 38px;font-weight: 600;margin: 10px 0 5px;}
-.top-news .blue_lt{margin: 0px 15px 0 100px;}
-.top-news .blue_ll,.top-news .blue_lt{width: 22%; text-align: center; display: inline-block;font-weight: normal;font-size: 14px;margin-right: 15px;}
+/* .top-news .blue_lt{margin: 0px 15px 0 100px;} */
+.top-news .blue_ll,.top-news .blue_lt{text-align: center; display: inline-block;font-weight: normal;font-size: 14px;margin-right: 15px;}
 .news-hot .content h4{color: #000;font-size: 20px;font-weight: normal;}
 .news-hot .content h3,.news-hot .content h5{padding-bottom: 15px;}
 .news-hot .blue_b{font-size: 21px;font-family: Microsoft Yahei;color: #222;}

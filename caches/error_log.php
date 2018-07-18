@@ -1522,3 +1522,15 @@
 <?php exit;?>07-16 20:11:14 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
 <?php exit;?>07-16 20:11:28 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
 <?php exit;?>07-16 20:11:42 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-18 17:40:15 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 21 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:40:15 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 21 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:40:15 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 21 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:40:16 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 21 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:40:16 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 21 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:40:16 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 21 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:41:08 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 7 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:41:08 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 7 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:41:08 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 7 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:41:08 | 2 | Missing argument 2 for str_cut(), called in /Library/WebServer/Documents/construction/caches/caches_template/default/content/index.php on line 7 and defined | phpcms/libs/functions/global.func.php | 178
+<?php exit;?>07-18 17:42:50 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
+<?php exit;?>07-18 17:44:35 | 2 | chmod(): Operation not permitted | phpcms/modules/content/classes/html.class.php | 364
