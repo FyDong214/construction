@@ -1,4 +1,4 @@
-<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><div class="footer" style="overflow: visible;padding: 0;">
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><div class="footer" style="overflow: visible;padding: 0;width: 100%;">
 <style>
 	div.info .lists,div.info .lists>ul{overflow: hidden;}
 	div.info .lists>ul>li{float: left;padding:3px 5px;}

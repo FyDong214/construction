@@ -1,4 +1,4 @@
-body{color:#444;background: #eee url(../images/v9/body-bg.png) repeat-y center}
+/* body{color:#444;background: #eee url(../images/v9/body-bg.png) repeat-y center} */
 a{text-decoration:none; color:#444}
 a:hover{text-decoration:underline; color:#1E50A2}
 .blue,blue a,.box h5 a,.box h6 a,.box a.more,.crumbs a{ color:#1d71b7}
@@ -186,7 +186,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 
 /* 我添加的详情页样式 */
 .body-top .nav-bar.header-show ul{overflow: hidden;width: 975px;margin: 0 auto;}
-.body-top .nav-bar.header-show ul>li>a{float: left;color: #fff;font-size: 13px;font-family:Microsoft YaHei;line-height: 40px;width: 80px;text-align: left;}
+.body-top .nav-bar.header-show ul>li>a{float: left;color: #fff;font-size: 13px;font-family:Microsoft YaHei;line-height: 40px;width: 80px;text-align: center;}
 #Article h1{font-size: 34px;font-weight: 500;width: 60%;margin: 0 auto;}
 #Article .logo{display: inline-block;position: absolute; top: 32px;left:0px;width: 180px;height: 60px;background: url(../images/con/con_logo.png) no-repeat center center;background-size: 180px auto;}
 
