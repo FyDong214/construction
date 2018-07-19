@@ -44,13 +44,13 @@ return array (
     'islink' => '0',
     'username' => 'phpcms',
     'inputtime' => '1529746136',
-    'updatetime' => '1530685984',
+    'updatetime' => '1531907472',
     'hitsid' => 'c-1-23',
-    'views' => '5',
+    'views' => '6',
     'yesterdayviews' => '0',
     'dayviews' => '1',
     'weekviews' => '1',
-    'monthviews' => '1',
+    'monthviews' => '2',
   ),
   22 => 
   array (

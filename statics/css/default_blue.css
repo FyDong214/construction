@@ -187,8 +187,8 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 /* 我添加的详情页样式 */
 .body-top .nav-bar.header-show ul{overflow: hidden;width: 975px;margin: 0 auto;}
 .body-top .nav-bar.header-show ul>li>a{float: left;color: #fff;font-size: 13px;font-family:Microsoft YaHei;line-height: 40px;width: 80px;text-align: left;}
-#Article>h1{position: relative;font-size: 34px;font-weight: 500;}
-#Article .logo{display: inline-block;position: absolute; top: 32px;left: -27px;width: 230px;height: 60px;background: url(../images/con/con_logo.png) no-repeat center center;background-size: 230px auto;}
+#Article h1{font-size: 34px;font-weight: 500;width: 60%;margin: 0 auto;}
+#Article .logo{display: inline-block;position: absolute; top: 32px;left:0px;width: 180px;height: 60px;background: url(../images/con/con_logo.png) no-repeat center center;background-size: 180px auto;}
 
 /* 通用容器 */
 .box{zoom:1; overflow:auto; padding-bottom:10px}
@@ -377,7 +377,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 /* 内容 */
 #Article{ overflow:hidden}
 #Article,.photo-channel .relevance{ border:1px solid #C3D4E7;zoom:1; padding:0 20px}
-#Article h1{color:#000;font:800 26px/30px "宋体",arial;margin-bottom:6px; text-align:center; padding:16px 0 8px; border-bottom:1px solid #e5e5e5}
+#Article h1{color:#000;font:800 26px/30px "宋体",arial;margin-bottom:6px; text-align:center; padding:16px 0 8px;}
 #Article h1 span{ font-size:12px; font-weight:normal; line-height:20px; color:#999}
 #Article .content{ font-size:14px}
 #Article .content p{font-size:14px;line-height:23px;text-align:justify;word-wrap:break-word; padding:8px 0}

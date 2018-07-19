@@ -5,16 +5,19 @@
 		<div class="adver">
 			<script language="javascript" src="<?php echo APP_PATH;?>index.php?m=poster&c=index&a=show_poster&id=13"></script>
 		</div>
-        <div id="Article" style="border: none;">
-        	<h1 style="font-size: 34px;font-weight: 500; padding: 50px 0 20px;margin-bottom: 20px;">
-				<i class="logo"></i>
-				<?php echo str_cut($title, 60);?>
+        <div id="Article" style="border: none;position: relative;">
+			<div style="border-bottom:1px solid #e5e5e5; margin-bottom: 20px;">	
+			<i class="logo"></i>
+        	<h1 style="font-size: 34px;font-weight: 500; padding: 50px 0 20px;line-height: 42px;">
+				<!-- <?php echo str_cut($title, 60);?> -->
+				<?php echo $title;?>
 				<br />
-<span style="display: inline-block;margin-top: 20px;"><?php echo $inputtime;?>&nbsp;&nbsp;&nbsp;来源：<?php echo $copyfrom;?>&nbsp;&nbsp;&nbsp;
+<span style="display: inline-block;margin-top: 20px;line-height: 0px;"><?php echo $inputtime;?>&nbsp;&nbsp;&nbsp;来源：<?php echo $copyfrom;?>&nbsp;&nbsp;&nbsp;
 	<!-- 评论：<a href="#comment_iframe" id="comment">0</a>  	点击：-->
 </span>
 	<!-- <span id="hits"></span> -->
 </h1>
+</div>
 			<!-- <?php if($description) { ?><div class="summary" ><?php echo $description;?></div><?php } ?> -->
 			<div class="content" style="font-size: 15px;line-height: 30px;font-family: SimSun;">
 			<?php if($allow_visitor==1) { ?>
