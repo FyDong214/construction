@@ -109,7 +109,7 @@
 
                 <!-- 质量安全 -->
                 <?php if($r['catid']==11 ) { ?>
-                <div class="box cat-area spetwo" <?php if($num%2!=0) { ?>style=" margin: 20px 20px 0 0; position: relative;"<?php } ?>>
+                <div class="box cat-area spetwo" <?php if($num%2!=0) { ?>style=" margin: 20px 20px 0 0; position: relative;width:350px;"<?php } ?>>
                         <h5 class="title-1">
                             <a href="<?php echo $r['url'];?>"><?php echo $r['catname'];?></a>
                             <!-- <a href="<?php echo $r['url'];?>" class="more">更多>></a> -->
